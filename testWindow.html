@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://yandex.ru/games/sdk/v2"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -185,14 +184,6 @@
     <!-- Элемент заполняется из js-->
   </div>
   <script>
-    YaGames
-    .init()
-    .then(ysdk => {
-        console.log('Yandex SDK initialized');
-        window.ysdk = ysdk;
-        ysdk.adv.showFullscreenAdv();
-        ysdk.features.LoadingAPI?.ready();
-    });
 
 
     // Ваши вопросы и варианты ответов
@@ -733,8 +724,6 @@
       });
 
       updateCounter(index);
-
-      ysdk.adv.showFullscreenAdv();
     }
 
     window.addEventListener("DOMContentLoaded", initQuiz);
@@ -773,21 +762,6 @@
         }
         isCheckingAnswer = false; // Снимаем флаг проверки после завершения
       }, 1000);
-
-      if (currentQuestionIndex >= 10)
-      {
-        ysdk.feedback.canReview()
-        .then(({ value, reason }) => {
-            if (value) {
-                ysdk.feedback.requestReview()
-                    .then(({ feedbackSent }) => {
-                        console.log(feedbackSent);
-                    })
-            } else {
-                console.log(reason)
-            }
-        })
-      }
     }
 
 
