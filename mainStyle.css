@@ -50,7 +50,7 @@ body {
     display: block;
     position: absolute;
     top: 0%;
-    left: 0%;   
+    left: 0%;
     padding: 20px;
     color: white;
     font: 12pt sans-serif;
@@ -91,9 +91,9 @@ body {
 }
 
 header {
-    background-color: cyan;
+    background-color: #BBE1FA;
     border-radius: 0 0 30px 30px;
-    height: 50px;
+    height: 132px;
     display: flex;
     flex-direction: row-reverse;
     /* box-sizing: border-box; */
@@ -102,40 +102,84 @@ header {
     padding-bottom: 10px;
 }
 
-header div {
+header {
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header .right {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    padding-right: 27px;
+    gap: 31px;
+}
+
+header .right a {
+    text-decoration: none;
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+header .history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-radius: 50px;
-    padding: 25px;
+    background: #0F4C75;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 388px;
+    height: 79px;
+    padding: 0;
 }
 
-header .user {
-    background-color: blue;
-    /* position: absolute;
-    right: 25px; */
-    /* width: 150px; */
-    /* margin: auto; */
-}
+header .history p {
+    color: #FFF;
 
-header .user p {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-right: 10px;
-    font: 12pt sans-serif;
-    /* width: 6em */
-}
-
-header h1 {
-    font: 24pt sans-serif;
-    /* text-align: center;
-    vertical-align: middle; */
+    /* text-align: center; */
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
     margin: 0;
-    margin-right: 25px;
-    font-weight: 900;
-    /* text-shadow: 2px 2px rgb(82, 82, 82); */
-    
+}
+
+header .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 44px;
+    gap: 16px;
+}
+
+header .left img {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+}
+
+header .left h1 {
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
 }
 
 header img {
