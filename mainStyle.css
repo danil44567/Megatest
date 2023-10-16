@@ -253,4 +253,122 @@ header img {
     border-radius: 60px;
     background: #BBE1FA;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.filter__title {
+    padding-left: 147px;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.filter__tags {
+    display: flex;
+    flex-direction: row;
+    gap: 49px;
+    padding-right: 146px;
+}
+
+.filter__tag {
+    border-radius: 36px;
+    background: #0F4C75;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+}
+
+.filter__tag-selected {
+    background: #3282B8;
+}
+
+.filter__tag p {
+    color: #FFF;
+    margin: 0;
+    text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.best-testes {
+    border-radius: 60px;
+    background: #BBE1FA;
+    height: 603px;
+    width: 100%;
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+}
+
+.best-testes__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16;
+}
+
+.best-testes__title h1 {
+    margin: 0;
+    color: #000;
+
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.best-testes__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.best-testes__quiz-pannel {
+
+    width: 800px;
+    height: 470px;
+    background-image: url("EmptyIcon.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.best-testes__quiz-pannel p {
+    padding-left: 13px;
+    margin: 0;
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 18px;
+}
+
+.best-testes__quiz-pannel a {
+    padding-right: 23px;
+    width: 310px;
+    height: 67px;
+    fill: #0F4C75;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-bottom: 18px;
+}
+
+.mal {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+text {font: 14pt sans-serif; fill: red;}
