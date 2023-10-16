@@ -25,7 +25,7 @@ main {
     transition: color 0.3s;
     width: 499px;
     height: 334px;
-
+    text-decoration: none;
 }
 
 .quizPannel:hover {
@@ -53,6 +53,7 @@ main {
 .quizPannel .title {
     font-weight: 500;
     margin: 0;
+    color: #000;
 }
 
 .quizPannel:hover img {
@@ -132,10 +133,12 @@ footer {
 }
 
 .email {
+    color: #000;
     font-weight: 800;
     padding: 0;
     margin: 0;
     padding-left: 33px;
+    text-decoration: none;
 }
 
 .footer__links {
@@ -174,6 +177,7 @@ header .history {
     width: 388px;
     height: 79px;
     padding: 0;
+    text-decoration: none;
 }
 
 header .history p {
@@ -189,6 +193,7 @@ header .left {
     align-items: center;
     padding-left: 44px;
     gap: 16px;
+    text-decoration: none;
 }
 
 header .left img {
@@ -198,6 +203,7 @@ header .left img {
 }
 
 header .left h1 {
+    color: #000;
     font-size: 48px;
     font-weight: 800;
     margin: 0;
@@ -310,7 +316,7 @@ header img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 16;
+    gap: 16px;
 }
 
 .best-testes__title h1 {
@@ -360,15 +366,3 @@ header img {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     padding-bottom: 18px;
 }
-
-.mal {
-    color: #FFF;
-    text-align: center;
-    font-family: Inter;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-
-text {font: 14pt sans-serif; fill: red;}
