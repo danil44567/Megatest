@@ -1,0 +1,10 @@
+@media screen and (max-width: 1536px) {
+    body{
+        font-size: 19.2px;
+    }
+
+    .quizPannel img {
+        width: 399.2px;
+        height: 234.5304px;
+    }
+}

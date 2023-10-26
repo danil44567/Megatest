@@ -23,8 +23,8 @@ main {
     border-radius: 60px 60px 0 0;
     position: relative;
     transition: color 0.3s;
-    width: 499px;
-    height: 334px;
+    /* width: 499px;
+    height: 334px; */
     text-decoration: none;
 }
 
