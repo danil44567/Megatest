@@ -17,6 +17,7 @@
 .test_list_element{
     display: flex;
     flex-direction: row;
+    margin-bottom: 100px;
 
 }
 .test_name{
