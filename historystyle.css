@@ -1,0 +1,51 @@
+header {
+    background-color: cyan;
+    border-radius: 0 0 30px 30px;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* box-sizing: border-box; */
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 25px;
+}
+
+header .user {
+    background-color: blue;
+    /* position: absolute;
+    right: 25px; */
+    /* width: 150px; */
+    /* margin: auto; */
+}
+
+header .user p {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-right: 10px;
+    font: 12pt sans-serif;
+    /* width: 6em */
+}
+
+header h1 {
+    font: 24pt sans-serif;
+    /* text-align: center;
+    vertical-align: middle; */
+    margin: 0;
+    margin-right: 25px;
+    font-weight: 900;
+    /* text-shadow: 2px 2px rgb(82, 82, 82); */
+    
+}
+
+header img {
+    height: 40px;
+}
