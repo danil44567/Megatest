@@ -1,53 +1,12 @@
 header {
-    background-color: cyan;
-    border-radius: 0 0 30px 30px;
-    height: 50px;
+    border-radius: 0 60px;
+    background: #BBE1FA;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 132px;
+    padding: 0;
     display: flex;
-    flex-direction: row-reverse;
-    /* box-sizing: border-box; */
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-header div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    padding: 25px;
-}
-
-header .user {
-    background-color: blue;
-    /* position: absolute;
-    right: 25px; */
-    /* width: 150px; */
-    /* margin: auto; */
-}
-
-header .user p {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-right: 10px;
-    font: 12pt sans-serif;
-    /* width: 6em */
-}
-
-header h1 {
-    font: 24pt sans-serif;
-    /* text-align: center;
-    vertical-align: middle; */
-    margin: 0;
-    margin-right: 25px;
-    font-weight: 900;
-    /* text-shadow: 2px 2px rgb(82, 82, 82); */
-    
-}
-
-header img {
-    height: 40px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .test_list_container{
@@ -108,7 +67,7 @@ header img {
 .pagination_list button{
     width: 100px;
     height: 100px;
-    background-image: url("images/Vector\ 7.png");
+    background-image: url("img/Vector\ 7.png");
     margin: 46px;
     color: #FFF;
     text-align: center;
@@ -117,4 +76,15 @@ header img {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    border: none;
+}
+footer {
+    border-radius: 60px 60px 0px 0px;
+    background: #BBE1FA;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    height: 132px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
