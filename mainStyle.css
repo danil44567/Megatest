@@ -350,7 +350,7 @@ header img {
     height: 24.479vw;
     max-height: 470px;
     max-width: 800px;
-    background-image: url("EmptyIcon.png");
+    background-image: url("img/EmptyIcon.png");
     display: flex;
     flex-direction: row;
     justify-content: space-between;
