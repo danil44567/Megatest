@@ -3,6 +3,34 @@
         font-size: 19.2px;
     }
 
+    header {
+        border-radius: 0 60px;
+        height: 105.6px;
+    }
+
+    header .history {
+        width: 310.4px;
+        height: 63.2px;
+    }
+
+    header .left img {
+        width: 80px;
+        height: 80px;
+        border-radius: 24px;
+    }
+
+    .filter {
+        width: 1256.8px;  
+        height: 92.8px;
+    }
+    .filter__title {
+        padding-left: 117.6px;
+    }
+
+    .filter__tag p {
+        padding: 6.4px 16px;
+    }
+
     .quizPannel img {
         width: 399.2px;
         height: 234.5304px;

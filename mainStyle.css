@@ -51,6 +51,7 @@ main {
 }
 
 .quizPannel .title {
+    font-size: 1em;
     font-weight: 500;
     margin: 0;
     color: #000;
@@ -111,7 +112,7 @@ main {
 }
 
 header {
-    border-radius: 0px 0px 60px 60px;
+    border-radius: 0 60px;
     background: #BBE1FA;
     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
     height: 132px;
@@ -161,7 +162,7 @@ header .right {
     text-decoration: none;
 
     color: #000;
-    font-size: 32px;
+    font-size: 1.333334em;
     font-weight: 700;
     text-decoration-line: underline;
 }
@@ -182,7 +183,7 @@ header .history {
 
 header .history p {
     color: #FFF;
-    font-size: 32px;
+    font-size: 1.333334em;
     font-weight: 800;
     margin: 0;
 }
@@ -204,7 +205,7 @@ header .left img {
 
 header .left h1 {
     color: #000;
-    font-size: 48px;
+    font-size: 2em;
     font-weight: 800;
     margin: 0;
     padding: 0;
@@ -259,7 +260,6 @@ header img {
 
 .filter {
     width: 1571px;
-    
     height: 116px;
     border-radius: 60px;
     background: #BBE1FA;
@@ -272,7 +272,7 @@ header img {
 
 .filter__title {
     padding-left: 147px;
-    font-size: 40px;
+    font-size: 1.666667em;
     font-weight: 800;
     margin: 0;
 }
@@ -293,6 +293,7 @@ header img {
 
 .filter__tag-selected {
     background: #3282B8;
+    box-shadow: none
 }
 
 .filter__tag p {
@@ -300,12 +301,9 @@ header img {
     margin: 0;
     text-align: center;
     font-family: Inter;
-    font-size: 40px;
+    font-size: 1.666667em;
     font-weight: 500;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px 20px;
 }
 
 .best-testes {
@@ -331,7 +329,7 @@ header img {
     color: #000;
 
     text-align: center;
-    font-size: 48px;
+    font-size: 2em;
     font-weight: 800;
 }
 
