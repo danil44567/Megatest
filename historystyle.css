@@ -1,39 +1,3 @@
-.test_list_container{
-    max-width: 1570px;
-    min-height: 701px;
-    flex-shrink: 0;
-    margin-top: 41px;
-}
-
-.test_list_container img{
-    width: 172px;
-    height: 101px;
-    flex-shrink: 0;
-    border-radius: 35px;
-    margin-right: 20px;
-    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
-}
-
-.test_list_element{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 100px;
-
-}
-.test_name{
-    max-width: 1378px;
-    height: 100px;
-    flex-shrink: 0;
-    border-radius: 35px;
-    background: #9CF5FB;  
-    text-align: start;
-    font-size: 60px;
-    padding-left: 69px;
-    padding-right: 69px;
-    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
-    }
-
-
 header {
     background-color: cyan;
     border-radius: 0 0 30px 30px;
@@ -84,4 +48,73 @@ header h1 {
 
 header img {
     height: 40px;
+}
+
+.test_list_container{
+    max-width: 1570px;
+    min-height: 701px;
+    flex-shrink: 0;
+    margin-top: 41px;
+}
+
+.test_list_container img{
+    width: 172px;
+    height: 101px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    margin-right: 20px;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.test_list_element{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+
+}
+
+.test_name{
+    max-width: 1378px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #9CF5FB;  
+    text-align: start;
+    font-size: 60px;
+    padding-left: 69px;
+    padding-right: 69px;
+    margin-right: 20px;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.test_score{
+    max-width: 275px;
+    height: 100px;
+    margin-left: auto;
+    border-radius: 35px;
+    background: #9CF5FB;  
+    text-align: start;
+    font-size: 60px;
+    padding-left: 69px;
+    padding-right: 69px;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+}
+.pagination_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination_list button{
+    width: 100px;
+    height: 100px;
+    background-image: url("images/Vector\ 7.png");
+    margin: 46px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
