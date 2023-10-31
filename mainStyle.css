@@ -381,7 +381,7 @@ header .left h1 {
 .quiz-content {
     display: flex;
     flex-direction: column;
-    gap: 74px;
+    gap: 1em;
     padding: 0 175px;
     align-items: center;
 }

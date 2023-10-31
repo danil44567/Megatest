@@ -1,3 +1,15 @@
+@media screen and (max-width: 1820px) {
+
+    .filter__title {
+        padding-left: 50px;
+    }
+
+    .filter__tags {
+        gap: 20px;
+        padding-right: 50px;
+    }
+}
+
 @media screen and (max-width: 1536px) {
     body {
         font-size: 19.2px;
@@ -23,7 +35,7 @@
     }
 
     .filter__title {
-        padding-left: 117.6px;
+        padding-left: 44px;
     }
 
     .filter__tag p {
@@ -31,8 +43,7 @@
     }
 
     .filter__tags {
-        gap: 39.2px;
-        padding-right: 116.8px;
+        padding-right: 45px;
     }
 
     /* .quizPannel img {
@@ -82,18 +93,16 @@
     }
 
     .filter__title {
-        padding-left: 30px;
+        padding-left: 25px;
     }
 
     .filter__tag p {
-        padding: 6.4px 16px;
+        padding: 5px 10px;
     }
 
     .filter__tags {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        padding-right: 30px;
+        gap: 12px;
+        padding-right: 25px;
     }
 
     /* .quizPannel img {
@@ -101,14 +110,32 @@
         height: 175.8978px;
     } */
 
-    .quiz-content{
+    .quiz-content {
         padding: 0 100px;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .quiz-content{
-        padding: 0 50px;
+    .quiz-content {
+        padding: 0 30px;
+    }
+
+    .filter {
+        height: 70px;
+        font-size: 12px;
+    }
+
+    .filter__title {
+        padding-left: 15px;
+    }
+
+    .filter__tag p {
+        padding: 5px 10px;
+    }
+
+    .filter__tags {
+        gap: 12px;
+        padding-right: 15px;
     }
 
     header {
@@ -116,8 +143,12 @@
         height: 70px;
     }
 
+    header .right {
+        padding-right: 20px;
+        gap: 8px;
+    }
 
-    header .left{
+    header .left {
         gap: 8px;
         padding-left: 20px;
     }
@@ -149,8 +180,30 @@
 
 
 @media screen and (max-width: 650px) {
-    .quiz-content{
-        padding: 0;
+    main{
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .filter{
+        flex-direction: column;
+        justify-content: center;
+        font-size: 8px;
+        height: auto;
+    }
+
+    .filter__tags {
+        gap: 8px;
+        padding: 0 10px 5px;
+    }
+
+    .filter__title {
+        padding: 5px 0px 5px;
+    }
+    
+    .quiz-content {
+        padding: 15px;
     }
 
     header {
@@ -159,7 +212,7 @@
     }
 
 
-    header .left{
+    header .left {
         gap: 8px;
         padding-left: 10px;
     }
