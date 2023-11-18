@@ -45,14 +45,14 @@ main {
 
 .quizPannel img {
     width: 100%;
-    border-radius: 60px;
+    border-radius: 3.90625vw;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
     /* width: 499px;
     height: 293.163px; */
 
     width: 26vw;
-    height: 15.274739583333334vw
+    height: 15.274739583333334vw;
 }
 
 .quizPannel .title {
@@ -365,12 +365,15 @@ header .left h1 {
 .best-testes__quiz-pannel a {
     margin-right: 23px;
     margin-bottom: 18px;
-    width: 310px;
-    height: 67px;
+    /* width: 310px;
+    height: 67px; */
+    width: 20.182291666666668vw;
+    height: 4.361979166666667vw;
     fill: #0F4C75;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-decoration: none;
     background-image: url(img/Vector\ 3.svg);
+    background-size: cover;
 
     display: flex;
     justify-content: center;
@@ -379,7 +382,7 @@ header .left h1 {
     margin: 0; */
     color: #FFF;
     text-align: center;
-    font-size: 36px;
+    font-size: 2.34375vw;
     font-weight: 800;
 }
 

@@ -160,7 +160,7 @@
         padding-right: 15px;
     }
 
-    header {
+    header, footer {
         border-radius: 0px 0px 30px 30px;
         height: 70px;
     }
@@ -197,6 +197,16 @@
 
     header .history p {
         font-size: 1em;
+    }
+
+    .best-testes__quiz-pannel2{
+        display: none;
+    }
+
+    .best-testes__quiz-pannel{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.702127659574468;
     }
 }
 
@@ -266,5 +276,9 @@
 
     header .history p {
         font-size: 0.8em;
+    }
+
+    .best-testes__arrow{
+        display: none;
     }
 }
