@@ -28,6 +28,7 @@ main {
     position: relative;
     transition: color 0.3s;
     text-decoration: none;
+    flex: 30%;
 }
 
 .quizPannel:hover {
@@ -51,8 +52,8 @@ main {
     /* width: 499px;
     height: 293.163px; */
 
-    width: 26vw;
-    height: 15.274739583333334vw;
+    /* width: 26vw;
+    height: 15.274739583333334vw; */
 }
 
 .quizPannel .title {
@@ -94,8 +95,8 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 24px;
-    /* column-gap: 24px; */
-    justify-content: space-between;
+    column-gap: 24px;
+    /* justify-content: space-between; */
     /* justify-content: center; */
 }
 
@@ -107,7 +108,24 @@ header {
     padding: 0;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    padding-right: 27px;
+    padding-left: 44px;
+}
+
+.buter{
+    height: 15px;
+    width: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.buter div{
+    background-color: black;
+    height: 3px;
 }
 
 footer {
@@ -142,7 +160,6 @@ header .right {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: 27px;
     gap: 31px;
 }
 
@@ -180,7 +197,6 @@ header .left {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 44px;
     gap: 16px;
     text-decoration: none;
 }

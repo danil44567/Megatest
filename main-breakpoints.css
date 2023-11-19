@@ -160,19 +160,21 @@
         padding-right: 15px;
     }
 
-    header, footer {
+    header {
         border-radius: 0px 0px 30px 30px;
+        height: 70px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    footer {
+        border-radius: 30px 30px 0px 0px;
         height: 70px;
     }
 
-    header .right {
-        padding-right: 20px;
-        gap: 8px;
-    }
-
+    header .right,
     header .left {
         gap: 8px;
-        padding-left: 20px;
     }
 
     header .left h1 {
@@ -199,11 +201,11 @@
         font-size: 1em;
     }
 
-    .best-testes__quiz-pannel2{
+    .best-testes__quiz-pannel2 {
         display: none;
     }
 
-    .best-testes__quiz-pannel{
+    .best-testes__quiz-pannel {
         width: 100%;
         height: auto;
         aspect-ratio: 1.702127659574468;
@@ -212,13 +214,13 @@
 
 
 @media screen and (max-width: 650px) {
-    main{
+    main {
         gap: 15px;
         padding-top: 15px;
         padding-bottom: 15px;
     }
 
-    .filter{
+    .filter {
         flex-direction: column;
         justify-content: center;
         font-size: 8px;
@@ -233,7 +235,7 @@
     .filter__title {
         padding: 5px 0px 5px;
     }
-    
+
     .quiz-content {
         padding: 15px;
     }
@@ -241,17 +243,8 @@
     header {
         border-radius: 0px 0px 20px 20px;
         height: 50px;
-    }
-
-
-    header .left {
-        gap: 8px;
-        padding-left: 10px;
-    }
-
-    header .right {
         padding-right: 10px;
-        gap: 8px;
+        padding-left: 10px;
     }
 
     header .left h1 {
@@ -278,7 +271,34 @@
         font-size: 0.8em;
     }
 
-    .best-testes__arrow{
+    .best-testes__arrow {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .buter {
+        display: flex;
+    }
+
+    header .right {
+        display: none;
+    }
+
+    .pagination {
+        gap: 10px;
+    }
+
+    .pagination__button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pagination__button div {
+        border-radius: 5px;
+    }
+
+    .pagination__button div p {
+        font-size: 1.5em;
     }
 }
