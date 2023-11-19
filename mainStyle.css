@@ -8,6 +8,10 @@ body {
     line-height: normal;
 }
 
+p, h3{
+    margin: 0;
+}
+
 @font-face {
     font-family: Inter;
     src: url(fonts/Inter-VariableFont_slnt\,wght.ttf);
@@ -85,6 +89,7 @@ main {
     0% {
         filter: brightness(100%)
     }
+
     100% {
         filter: brightness(40%)
     }
@@ -114,16 +119,32 @@ header {
     padding-left: 44px;
 }
 
-.buter{
+.burger__body {
     height: 15px;
     width: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* display: none; */
+}
+
+.right__title{
     display: none;
 }
 
-.buter div{
+.burger{
+    display: none;
+}
+
+.placeholder{
+    display: none;
+}
+
+#burger {
+    display: none;
+}
+
+.burger__body div {
     background-color: black;
     height: 3px;
 }
@@ -250,7 +271,7 @@ header .left h1 {
     justify-content: center;
 }
 
-.pagination__button div img{
+.pagination__button div img {
     height: 90%;
     object-fit: contain;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
