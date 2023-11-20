@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    color: #000;
+    font-family: Inter;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+
+p,
+h1,
+h2 {
+    margin: 0;
+}
+
+main {
+    padding: 39px 175px 128px;
+}
+
+h1,
+h2 {
+    font-size: 48px;
+}
+
+.about p {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.contacts {
+    padding-top: 19px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts__photos {
+    display: flex;
+    flex-direction: row;
+    gap: 133px;
+}
+
+.contacts__photo img {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 150px;
+}
+
+.contacts__photo p {
+    font-size: 32px;
+    text-align: center;
+}
+
+.contacts__info h2 {
+    padding-bottom: 20px;
+}
+
+.contacts__info a {
+    font-size: 32px;
+}
+
+@media screen and (max-width: 1536px) {
+    main {
+        padding: 31.2px 140px 102.4px;
+    }
+
+    h1,
+    h2 {
+        font-size: 38.4px;
+    }
+
+    .about p,
+    .contacts__info a,
+    .contacts__photo p {
+        font-size: 25.6px;
+    }
+
+    .contacts {
+        padding-top: 15.2px;
+    }
+
+    .contacts__photos {
+        gap: 106.4px;
+    }
+
+    .contacts__photo img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .contacts__info h2 {
+        padding-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    main {
+        padding: 24px 60px 80px;
+    }
+
+    .contacts__photos {
+        gap: 50px;
+    }
+
+    .contacts__photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1,
+    h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        padding: 24px 30px 24px;
+    }
+
+    .contacts {
+        flex-wrap: wrap;
+    }
+
+    .contacts__photos {
+        gap: 50px;
+        width: 100%;
+        justify-content: space-evenly;
+        padding-top: 12px;
+    }
+
+    .contacts__photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contacts__info h2 {
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .about p,
+    .contacts__info a,
+    .contacts__photo p {
+        font-size: 16px;
+    }
+
+    h1,
+    h2 {
+        font-size: 28px;
+    }
+
+    .contacts__photo img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contacts__photos {
+        gap: 0px;
+        justify-content: space-between;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .contacts__photo img {
+        flex: 30%;
+        max-width: 140px;
+        max-height: 140px;
+    }
+}

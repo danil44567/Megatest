@@ -15,6 +15,10 @@ footer {
     line-height: normal;
 }
 
+h3{
+    margin: 0;
+}
+
 header {
     border-radius: 0px 0px 60px 60px;
     background: #BBE1FA;
