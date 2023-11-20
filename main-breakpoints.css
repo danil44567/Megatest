@@ -144,6 +144,10 @@
         height: auto;
         aspect-ratio: 1.702127659574468;
     }
+
+    .best-testes__content{
+        padding-top: 16px;
+    }
 }
 
 
@@ -189,11 +193,16 @@
 
     .best-testes {
         border-radius: 30px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
+    }
+
+    .best-testes__title img {
+        width: 40px;
+        height: 40px;
     }
 
     .best-testes__content {
-        padding: 15px;
+        padding: 6px 15px 12px;
     }
 
     .best-testes__arrow {
