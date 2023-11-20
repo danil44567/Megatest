@@ -261,9 +261,9 @@ footer {
         border-radius: 12px;
     }
 
-    .navLink {
+    /* .navLink {
         font-size: 0.8em;
-    }
+    } */
 
     header .history {
         border-radius: 50px;
@@ -271,7 +271,11 @@ footer {
         height: 27.49px;
     }
 
-    header .history p {
+    /* header .history p {
+        font-size: 0.8em;
+    } */
+
+    header .right{
         font-size: 0.8em;
     }
 }
@@ -309,8 +313,16 @@ footer {
         right: 0;
         flex-direction: column-reverse;
         justify-content: flex-end;
-
+        gap: 12px;
         padding: 16px 12px;
+
+        font-size: 1.2em;
+    }
+
+    header .history {
+        border-radius: 50px;
+        width: 200px;
+        height: 35px;
     }
 
     .right__title {
