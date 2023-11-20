@@ -6,6 +6,18 @@ body {
     font-size: 24px;
     font-style: normal;
     line-height: normal;
+
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+}
+
+header,footer{
+    flex-shrink: 0;
 }
 
 p,

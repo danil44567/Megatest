@@ -79,8 +79,6 @@ main {
     left: 0%;
     padding: 20px;
     opacity: 1;
-    animation-duration: 0.6s;
-    animation-name: showHidden;
     color: #FFF;
     font-weight: 500;
 }
