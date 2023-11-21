@@ -175,7 +175,7 @@
     }
 
     .quiz-content {
-        padding: 15px;
+        padding: 0 15px;
     }
 
     .best-testes__arrow {
@@ -225,6 +225,14 @@
         width: 155px;
         height: 33.5px;
         font-size: 1.2em;
+    }
+
+    .quizPannel{
+        width: calc((100% / 2) - 18px);
+    }
+
+    .quizContainer {
+        gap: 18px;
     }
 }
 
