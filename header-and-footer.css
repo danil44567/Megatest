@@ -15,6 +15,10 @@ footer {
     line-height: normal;
 }
 
+h3{
+    margin: 0;
+}
+
 header {
     border-radius: 0px 0px 60px 60px;
     background: #BBE1FA;
@@ -92,8 +96,8 @@ header .left h1 {
 }
 
 .burger__body {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -117,8 +121,10 @@ header .left h1 {
 }
 
 .burger__body div {
-    background-color: black;
-    height: 3px;
+    /* background-color: black; */
+    background: #0F4C75;
+    height: 4px;
+    border-radius: 100px;
 }
 
 footer {
@@ -147,7 +153,6 @@ footer {
     font-weight: 800;
     padding: 0;
     margin: 0;
-    /* padding-left: 33px; */
     text-decoration: none;
 }
 
@@ -175,7 +180,16 @@ footer {
 
     header,
     footer {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    header .left h1 {
+        font-size: 1.7em;
+    }
+
+    header .right,
+    header .left {
+        gap: 16px;
     }
 }
 
@@ -258,18 +272,14 @@ footer {
         border-radius: 12px;
     }
 
-    .navLink {
-        font-size: 0.8em;
-    }
-
     header .history {
         border-radius: 50px;
         width: 135px;
         height: 27.49px;
     }
 
-    header .history p {
-        font-size: 0.8em;
+    header .right{
+        font-size: 0.75em;
     }
 }
 
@@ -306,8 +316,16 @@ footer {
         right: 0;
         flex-direction: column-reverse;
         justify-content: flex-end;
-
+        gap: 12px;
         padding: 16px 12px;
+
+        font-size: 1.2em;
+    }
+
+    header .history {
+        border-radius: 50px;
+        width: 200px;
+        height: 35px;
     }
 
     .right__title {
