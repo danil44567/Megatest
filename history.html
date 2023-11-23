@@ -5,11 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="historystyle.css">
+    <link rel="stylesheet" href="header-and-footer.css">
     <title>МЕГАТЕСТ</title>
 </head>
 
 <body>
     <header>
+        <a href="index.html" class="left">
+            <img src="img/ИнтеллитестИконка.png" alt="">
+            <h1>Интеллитест</h1>
+        </a>
+
+        <label class="burger" for="burger">
+            <div class="burger__body">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </label>
+        <input type="checkbox" id="burger">
+
+        <div class="right">
+            <a class="navLink" href="#">Инструкция</a>
+            <a class="navLink" href="about-me.html">О нас</a>
+            <a href="history.html" class="history">
+                <p>История решений</p>
+            </a>
+            <div class="right__title">
+                <h3>Меню</h3>
+                <label for="burger">X</label>
+            </div>
+        </div>
+        <label for="burger" class="placeholder">
+
+        </label>
     </header>
 
     <div class="test_list_container">
@@ -48,6 +77,11 @@
     </div>
     
     <footer>
+        <div class="footer__links">
+            <a class="navLink" href="#">Инструкция</a>
+            <a class="navLink" href="about-me.html">О нас</a>
+        </div>
+        <a href="mailto:naplevat@samsa.ur" class="email">Email: naplevat@samsa.ur</a>
     </footer>
 </body>
 
