@@ -49,18 +49,3 @@ window.addEventListener('resize', function (event) {
 
     sliderLine.style.transition = temp;
 }, true);
-
-
-tf = test(1,2)
-tf(4,5,6)
-
-function test(a, b)
-{
-    let asd = a;
-    let dsa = b;
-
-    return function(w, h, c)
-    {
-        console.log(a + b + w + h + c)
-    }
-}
