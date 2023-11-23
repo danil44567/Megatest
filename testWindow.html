@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("img/Background.jpeg");
+      background-size: cover;
+      /* чтобы изображение заполнило всю доступную область */
+      background-position: center center;
+      /* чтобы изображение было выровнено по центру */
+      animation: fadeIn 1s ease-in;
+    }
+
+    .quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      /* max-width: 500px;*/
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .option {
+      margin: 10px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .option:hover {
+      background-color: #ddd;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .counter {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .option.selected {
+      color: #fff;
+    }
+
+    .option.correct {
+      background-color: green;
+      color: white;
+      box-shadow: 0 2px 20px rgba(0, 255, 0, 1);
+    }
+
+    .option.incorrect {
+      background-color: red;
+      color: white;
+      box-shadow: 0 2px 20px rgba(255, 0, 0, 1);
+    }
+
+    .restart-btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .restart-btn:hover {
+      background-color: #555;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(20px);
+        visibility: hidden;
+      }
+    }
+
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .correct-answers {
+      color: green;
+      font-weight: bold;
+    }
+
+    .total-questions {
+      color: green;
+      font-weight: bold;
+    }
+
+    .quiz-container::before,
+    .quiz-container::after {
+      content: "?";
+      position: absolute;
+      font-size: 36px;
+      color: #3498db;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Тень */
+      animation: rotateQuestion 10s infinite linear;
+      /* Анимация вращения */
+    }
+
+    .quiz-container::before {
+      top: 10px;
+      left: 10px;
+    }
+
+    .quiz-container::after {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    @keyframes rotateQuestion {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <title>Супер тест по Genshin Impact</title>
+</head>
+
+<body>
+  <div class="quiz-container" id="quiz-container">
+    <!-- Элемент заполняется из js-->
+  </div>
+  <script>
+
+
+    // Ваши вопросы и варианты ответов
+    const questions = [
+      {
+        question: "Какая нация представлена архонтом Мондштадта?",
+        options: ["Лиюэй", "Сириус", "Ли Лу", "Ватерхайя"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется оружие, которое держит в руках Ксеонг Ли?",
+        options: ["Ледяной Сокрушитель", "Свободный Ветер", "Меч Декрета", "Звезда Надежды"],
+        correctIndex: 2
+      },
+      {
+        question: "Как зовут лучницу из Лиюэя, которая пришла в Тейват в поисках своей сестры?",
+        options: ["Мона", "Лумин", "Цзы Чинь", "Чжон Юнь"],
+        correctIndex: 1
+      },
+      {
+        question: "Какая элементарная магия была у архона Ватерхайи?",
+        options: ["Электро", "Гео", "Гидро", "Дендро"],
+        correctIndex: 2
+      },
+      {
+        question: "Какое имя носит архон Шэнь Ху?",
+        options: ["Анемо", "Виридиан", "Барбатос", "Тритон"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у архона Живогора?",
+        options: ["Анемо", "Гео", "Электро", "Пиро"],
+        correctIndex: 3
+      },
+      {
+        question: "Как зовут молодого рыцаря из Мондштадта, который мечтает стать настоящим героем?",
+        options: ["Джин", "Дилюк", "Кэйа", "Альбедо"],
+        correctIndex: 2
+      },
+      {
+        question: "В каком городе находится Черный Лилийный Гостиничный Комплекс?",
+        options: ["Лиюэй", "Снежная Сторона Южных Земель", "Тейват", "Мондштадт"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется артефактный набор, связанный с элементом Гео?",
+        options: ["Бесконечный океан", "Грозовой Ястреб", "Пламенный Вихрь", "Архаичные часы"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных является архонтом Лиюэя?",
+        options: ["Цзы Чинь", "Люмин", "Мона", "Чжон Юнь"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется регион в мире Тейват, где происходят события игры?",
+        options: ["Мондштадт", "Ли Лу", "Лиюэй", "Ватерхайя"],
+        correctIndex: 2
+      },
+      {
+        question: "Как зовут барда, который любит петь песни о своих приключениях?",
+        options: ["Венти", "Кэйа", "Дилюк", "Эльза"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется оружие, которое держит в руках архон Анемо?",
+        options: ["Творец Песен", "Приморский Рыцарь", "Меч Архона", "Анемоны"],
+        correctIndex: 0
+      },
+      {
+        question: "Какое прозвище дано Жанглинь, одной из Шести Великих?",
+        options: ["Ледяной Танец", "Огненная Ворона", "Гео-Звезда", "Кристальная Леди"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется место, где игроки могут сражаться с монстрами и получать награды?",
+        options: ["Гильдейский Зал", "Спираль Абсолюта", "Мондштадт Арена", "Таверна Дельфин"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой элемент у архона Анемо?",
+        options: ["Анемо", "Электро", "Пиро", "Гидро"],
+        correctIndex: 0
+      },
+      {
+        question: "Какое оружие из перечисленных является катаной?",
+        options: ["Свободный Ветер", "Творец Песен", "Приморский Рыцарь", "Ледяной Сокрушитель"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж может призывать океанских духов?",
+        options: ["Альбедо", "Мона", "Тарталия", "Джин"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется организация, занимающаяся исследованием магии и элементов в Тейват?",
+        options: ["Фатуй", "Милилития", "Мора", "Фавоний"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой элемент у архона Электро?",
+        options: ["Электро", "Пиро", "Гидро", "Дендро"],
+        correctIndex: 0
+      },
+      {
+        question: "Какое имя носит бард, который скрывается под псевдонимом 'Вагабунд'?",
+        options: ["Кэйа", "Альбедо", "Дилюк", "Чонгюн"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой ресурс используется для повышения уровня оружия в игре?",
+        options: ["Пространственно-временные камни", "Драгоценные слитки", "Старинные монеты", "Пища"],
+        correctIndex: 1
+      },
+      {
+        question: "Какая нация управляется Шогуном Инадзумой?",
+        options: ["Лиюэй", "Мондштадт", "Тейват", "Инадзума"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется артефактный набор, связанный с элементом Электро?",
+        options: ["Грозовой Ястреб", "Пылающий Шторм", "Бурлящий Океан", "Ледяной Вихрь"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Пламенный Рыцарь'?",
+        options: ["Анемо", "Пиро", "Электро", "Гео"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется желтый плод, используемый для приготовления блюд в Тейват?",
+        options: ["Анемогранат", "Лазурный трюфель", "Светящаяся ягода", "Сладкий цветок"],
+        correctIndex: 2
+      },
+      {
+        question: "Какая нация находится на северо-западе Тейват?",
+        options: ["Лиюэй", "Снежная Сторона Южных Земель", "Тейват", "Мондштадт"],
+        correctIndex: 1
+      },
+      {
+        question: "Какое прозвище получила Жан Ю, архон Анемо?",
+        options: ["Пламенный Король", "Барбатос", "Вечный Лед", "Леди Теней"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется столица нации Лиюэй?",
+        options: ["Ханьфэй", "Ли Лу", "Гуйянь", "Лиюэй-Харбор"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у персонажа под именем 'Фишл'?",
+        options: ["Электро", "Пиро", "Анемо", "Гидро"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут рыцаря из Мондштадта, управляющего отрядом рыцарей 'Любящая Тишина'?",
+        options: ["Дилюк", "Джин", "Кэйа", "Чонгюн"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных является архонтом Пиро?",
+        options: ["Жан Ю", "Венти", "Кэйа", "Альбедо"],
+        correctIndex: 3
+      },
+      {
+        question: "Как зовут барда, который рассказывает истории о Лиюэй?",
+        options: ["Чонгюн", "Линь Хей", "Шень Хэ", "Чжон Юнь"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется организация, занимающаяся алхимией и научными исследованиями в Тейват?",
+        options: ["Рыцари Фавония", "Фавоний", "Алхимический Совет", "Фатуй"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется область в Мондштадте, известная своими виноградниками?",
+        options: ["Летний Дворец", "Школа Свечей", "Виноградные Поля", "Кристальный Лес"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у персонажа по имени 'Клинт'?",
+        options: ["Пиро", "Электро", "Гидро", "Дендро"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется рыцарь из Лиюэя, которая предпочитает действовать в одиночку?",
+        options: ["Цзы Чинь", "Лумин", "Мона", "Линь Хей"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Ледяной Клинок'?",
+        options: ["Пиро", "Гео", "Анемо", "Крио"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется область в Тейвате, контролируемая архоном Пиро?",
+        options: ["Инадзума", "Фонтан Гне", "Аздих", "Снежная Сторона Южных Земель"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Гео?",
+        options: ["Кэйа", "Джин", "Дилюк", "Альбедо"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется регион в Тейват, который славится своими кристаллическими пейзажами?",
+        options: ["Гравия", "Ватерхайя", "Лиюэй", "Гайя"],
+        correctIndex: 0
+      },
+      {
+        question: "Какое оружие из перечисленных связано с элементом Гео?",
+        options: ["Приморский Рыцарь", "Свободный Ветер", "Меч Декрета", "Творец Песен"],
+        correctIndex: 2
+      },
+      {
+        question: "Как зовут юного алхимика, руководящего алхимическими исследованиями в Мондштадте?",
+        options: ["Дилюк", "Альбедо", "Клинт", "Венти"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Электро?",
+        options: ["Клинт", "Кэйа", "Фишл", "Линь Хей"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется секретное общество, занимающееся тайными операциями в Мондштадте?",
+        options: ["Тысяча Лилий", "Фавоний", "Благородные Вороны", "Свободные Ветра"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у архона Фатуй?",
+        options: ["Пиро", "Гео", "Электро", "Гидро"],
+        correctIndex: 2
+      },
+      {
+        question: "Какое имя носит богиня, правящая над Мондштадтом?",
+        options: ["Барбатос", "Жан Ю", "Дилюк", "Венти"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется меч, который является символом рыцарей Фавонии?",
+        options: ["Ледяной Клинок", "Меч Света", "Соколиный Меч", "Меч Судьбы"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных является катанием?",
+        options: ["Дилюк", "Чонгюн", "Альбедо", "Клинт"],
+        correctIndex: 1
+      },
+      {
+        question: "Как зовут архона Гео, который управляет Ли Лу?",
+        options: ["Альбедо", "Жанг Ли", "Дилюк", "Чжон Юнь"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Поющий Меч'?",
+        options: ["Электро", "Анемо", "Пиро", "Гео"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется оружие, которое держит в руках персонаж под именем 'Бейдо'?",
+        options: ["Жезл Света", "Клинок Хранителя", "Теневой Меч", "Демонический Клинок"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Пламенная Волчица'?",
+        options: ["Гео", "Пиро", "Анемо", "Воды"],
+        correctIndex: 1
+      },
+      {
+        question: "Как зовут бога, управляющего Гравией?",
+        options: ["Анемос", "Аркан", "Барбатос", "Моракс"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется организация, созданная архоном Анемо для управления Мондштадтом?",
+        options: ["Рыцари Фавонии", "Любящая Тишина", "Фатуй", "Благородные Вороны"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Звездный Путник'?",
+        options: ["Анемо", "Гео", "Крио", "Электро"],
+        correctIndex: 2
+      },
+      {
+        question: "Как зовут архона Дендро, управляющего Сиреней?",
+        options: ["Каменная Леди", "Ледяной Король", "Цветущий Сумрак", "Флора"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется организация, занимающаяся борьбой с монстрами и защитой города Мондштадт?",
+        options: ["Рыцари Фавонии", "Любящая Тишина", "Светлый Орден", "Фавоний"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут босса, обитающего в Гравии?",
+        options: ["Дракошник", "Хильдир", "Моракс", "Андриус"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Мона'?",
+        options: ["Электро", "Анемо", "Пиро", "Гидро"],
+        correctIndex: 1
+      },
+      {
+        question: "Какое имя носит архон Пиро, управляющий Гайей?",
+        options: ["Альбедо", "Джин", "Флора", "Мона"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Гидро?",
+        options: ["Дилюк", "Чжон Юнь", "Клинт", "Фишл"],
+        correctIndex: 1
+      },
+      {
+        question: "Как зовут архона Гидро, управляющего Фонтаном Гне?",
+        options: ["Барбатос", "Варфарелл", "Тарталия", "Моракс"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у персонажа под именем 'Розария'?",
+        options: ["Анемо", "Крио", "Пиро", "Гео"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется область в Тейвате, контролируемая архоном Гидро?",
+        options: ["Фонтан Гне", "Инадзума", "Гайя", "Аздих"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Анемо?",
+        options: ["Жанг Ли", "Бейдо", "Тарталия", "Клинт"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут персонажа, который призывает питомцев для помощи в бою?",
+        options: ["Фишл", "Дилюк", "Кэйа", "Розария"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Нингуань'?",
+        options: ["Пиро", "Гео", "Электро", "Анемо"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется архон Гео, управляющий Ли Лу?",
+        options: ["Жанг Ли", "Каменная Леди", "Альбедо", "Чжон Юнь"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Пиро?",
+        options: ["Розария", "Джин", "Чонгюн", "Тарталия"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Крио?",
+        options: ["Дилюк", "Фишл", "Жанг Ли", "Чжон Юнь"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется архон Электро, управляющий Инадзумой?",
+        options: ["Жанг Ли", "Тарталия", "Инадзума", "Линь Хей"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Кэйа'?",
+        options: ["Анемо", "Электро", "Крио", "Пиро"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется главный город в Тейвате?",
+        options: ["Лиюэй", "Мондштадт", "Тейват", "Инадзума"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Электро?",
+        options: ["Мона", "Бейдо", "Розария", "Альбедо"],
+        correctIndex: 1
+      },
+      {
+        question: "Как зовут вора и стрелка из Лиюэя, бывшего членом Благородных Ворон?",
+        options: ["Дилюк", "Андриус", "Кэйа", "Чжон Юнь"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у персонажа под именем 'Фавоний'?",
+        options: ["Анемо", "Гео", "Пиро", "Электро"],
+        correctIndex: 0
+      },
+      {
+        question: "Как называется организация, куда входят архонты и которая управляет миром Тейват?",
+        options: ["Фавоний", "Светлый Орден", "Рыцари Фавонии", "Лиюэй"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Дендро?",
+        options: ["Фишл", "Альбедо", "Мона", "Кэйа"],
+        correctIndex: 1
+      },
+      {
+        question: "Как зовут легендарного лапутийца, который сражается за свободу Лиюэя?",
+        options: ["Люмин", "Линь Хей", "Альбедо", "Цзы Чинь"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Альбедо'?",
+        options: ["Гео", "Пиро", "Анемо", "Электро"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется архон Анемо, управляющий Мондштадтом?",
+        options: ["Жанг Ли", "Джин", "Альбедо", "Чонгюн"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Анемо?",
+        options: ["Бейдо", "Розария", "Мона", "Фишл"],
+        correctIndex: 3
+      },
+      {
+        question: "Как называется место, где игроки могут взаимодействовать с другими игроками?",
+        options: ["Рейды", "Спираль Абсолюта", "Святилище Милостивой Бароны", "Каменное Убежище"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Тартаглия'?",
+        options: ["Пиро", "Гео", "Крио", "Гидро"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Алмазная Королева'?",
+        options: ["Гео", "Пиро", "Крио", "Анемо"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут наставницу героя в Мондштадте?",
+        options: ["Джин", "Альбедо", "Мона", "Кэйа"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой элемент у архона Гео?",
+        options: ["Пиро", "Анемо", "Гео", "Электро"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется рыцарская организация в Тейвате, управляемая архоном Пиро?",
+        options: ["Благородные Вороны", "Светлый Орден", "Рыцари Фавонии", "Свободные Ветра"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой персонаж из перечисленных является архонтом Гео?",
+        options: ["Альбедо", "Джин", "Чжон Юнь", "Тарталия"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут архона Пиро, управляющего Гравией?",
+        options: ["Барбатос", "Каменная Леди", "Цветущий Сумрак", "Флора"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой элемент у персонажа с прозвищем 'Носитель Меча'?",
+        options: ["Гео", "Крио", "Пиро", "Дендро"],
+        correctIndex: 1
+      },
+      {
+        question: "Как называется организация, собравшая души погибших героев?",
+        options: ["Рыцари Фавонии", "Альбедо", "Фатуй", "Часовые Песни"],
+        correctIndex: 3
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Пиро?",
+        options: ["Розария", "Мона", "Клинт", "Фишл"],
+        correctIndex: 2
+      },
+      {
+        question: "Как зовут архона Крио, управляющего Снежной Стороной Южных Земель?",
+        options: ["Жанг Ли", "Альбедо", "Тарталия", "Цзы Чинь"],
+        correctIndex: 1
+      },
+      {
+        question: "Какой элемент у персонажа под именем 'Кокооми'?",
+        options: ["Пиро", "Анемо", "Гидро", "Крио"],
+        correctIndex: 2
+      },
+      {
+        question: "Как называется архон Анемо, управляющий Мондштадтом?",
+        options: ["Джин", "Барбатос", "Альбедо", "Цзы Чинь"],
+        correctIndex: 0
+      },
+      {
+        question: "Какой персонаж из перечисленных обладает элементом Электро?",
+        options: ["Бейдо", "Розария", "Джин", "Альбедо"],
+        correctIndex: 0
+      },
+      {
+        question: "Как зовут архона Крио, управляющего Инадзумой?",
+        options: ["Тарталия", "Жанг Ли", "Инадзума", "Флора"],
+        correctIndex: 2
+      },
+      {
+        question: "Какой элемент у персонажа с именем 'Сая'?",
+        options: ["Анемо", "Крио", "Пиро", "Гео"],
+        correctIndex: 1
+      }
+
+
+
+      // ... добавьте другие вопросы по аналогии
+    ];
+    const quizTitle = "Супер тест по Genshin Impact"
+
+
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    let isCheckingAnswer = false;
+
+
+    const quizContainer = document.querySelector("#quiz-container"); // Получаем контейнер один раз
+
+    function loadQuestion(index) {
+      const questionContainer = quizContainer.querySelector(".question");
+      const optionsContainer = quizContainer.querySelector(".options");
+      const feedbackElement = quizContainer.querySelector(".feedback");
+
+      questionContainer.textContent = questions[index].question;
+      optionsContainer.innerHTML = "";
+
+      if (feedbackElement) {
+        feedbackElement.remove();
+      }
+
+      questions[index].options.forEach((option, optionIndex) => {
+        const optionElement = document.createElement("div");
+        optionElement.classList.add("option", "fade-in");
+        optionElement.textContent = option;
+        optionElement.addEventListener("click", () => selectOption(optionElement, optionIndex));
+        optionsContainer.appendChild(optionElement);
+      });
+
+      updateCounter(index);
+    }
+
+    window.addEventListener("DOMContentLoaded", initQuiz);
+
+    function selectOption(optionElement, selectedIndex) {
+      if (isCheckingAnswer) {
+        return; // Блокируем дополнительный ввод во время проверки
+      }
+
+      isCheckingAnswer = true; // Устанавливаем флаг проверки
+      const correctIndex = questions[currentQuestionIndex].correctIndex;
+
+      const options = document.querySelectorAll(".option");
+      options.forEach(option => option.classList.remove("selected"));
+
+      if (selectedIndex === correctIndex) {
+        options[selectedIndex].classList.add("correct");
+        correctAnswers++;
+      } else {
+        options[selectedIndex].classList.add("incorrect");
+      }
+
+      options.forEach((option, index) => {
+        if (index !== selectedIndex) {
+          option.classList.remove("fade-in");
+          option.classList.add("fade-out");
+        }
+      });
+
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion(currentQuestionIndex);
+        } else {
+          showFinalScore();
+        }
+        isCheckingAnswer = false; // Снимаем флаг проверки после завершения
+      }, 1000);
+    }
+
+
+    function updateCounter(index) {
+      const counterElement = document.querySelector(".counter");
+      counterElement.textContent = `Вопрос ${index + 1} из ${questions.length}`;
+    }
+
+
+    function initQuiz() {
+      const quizContainer = document.querySelector("#quiz-container");
+      quizContainer.innerHTML = `
+    <h1>${quizTitle}</h1>
+    <p class="question"></p>
+    <div class="options"></div>
+    <p class="counter">Вопрос 1 из ${questions.length}</p>
+  `;
+
+      currentQuestionIndex = 0;
+      correctAnswers = 0;
+      loadQuestion(currentQuestionIndex);
+    }
+
+    function showFinalScore() {
+      const quizContainer = document.querySelector("#quiz-container");
+      const resultsContainer = document.createElement("div");
+      resultsContainer.classList.add("results-container");
+      resultsContainer.innerHTML = `
+<p>Тест завершен! Вы правильно ответили на <span class="correct-answers">${correctAnswers}</span> вопросов из <span class="total-questions">${questions.length}</span>.</p>
+  <button class="restart-btn">Начать сначала</button>
+`;
+      const correctAnswersPercentage = (correctAnswers / questions.length) * 100;
+
+      const correctAnswersElement = resultsContainer.querySelector(".correct-answers");
+
+      correctAnswersElement.textContent = correctAnswers;
+
+      if (correctAnswersPercentage >= 90) {
+        correctAnswersElement.style.color = "green";
+      } else if (correctAnswersPercentage >= 50) {
+        correctAnswersElement.style.color = "orange";
+      } else {
+        correctAnswersElement.style.color = "red";
+      }
+      quizContainer.innerHTML = ""; // Очищаем контейнер
+      quizContainer.appendChild(resultsContainer); // Добавляем результаты
+
+      const restartButton = quizContainer.querySelector(".restart-btn");
+      restartButton.addEventListener("click", initQuiz);
+    }
+
+
+  </script>
+</body>
+
+</html>
