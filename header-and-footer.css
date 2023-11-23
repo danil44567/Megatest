@@ -183,6 +183,11 @@ footer {
         font-size: 16px;
     }
 
+    header .history {
+        width: 256.66666px;
+        height: 52.66666px;
+    }
+
     header .left h1 {
         font-size: 1.7em;
     }
