@@ -1,17 +1,8 @@
 body{
     margin: 0;
+    background-color: #F5F5F5;
 }
 
-header {
-    border-radius: 0px 0px 60px 60px ;
-    background: #BBE1FA;
-    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
-    height: 132px;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
 .test_list_container{
     max-width: 1570px;
@@ -41,7 +32,7 @@ header {
     height: 100px;
     flex-shrink: 0;
     border-radius: 35px;
-    background: #9CF5FB;  
+    background: #BBE1FA;  
     text-align: start;
     font-size: 60px;
     padding-left: 69px;
@@ -55,7 +46,7 @@ header {
     height: 100px;
     margin-left: auto;
     border-radius: 35px;
-    background: #9CF5FB;  
+    background: #BBE1FA;  
     text-align: start;
     font-size: 60px;
     padding-left: 69px;
@@ -81,14 +72,4 @@ header {
     font-weight: 400;
     line-height: normal;
     border: none;
-}
-footer {
-    border-radius: 60px 60px 0px 0px;
-    background: #BBE1FA;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-    height: 132px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
