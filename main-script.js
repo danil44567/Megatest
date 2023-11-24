@@ -2,13 +2,13 @@
 let tests;
 
 const tagAll = document.getElementById("tag-all");
-const tagGames = document.getElementById("tag-games")
-const tagMovie = document.getElementById("tag-movie")
-const tagSince = document.getElementById("tag-sience")
+const tagGames = document.getElementById("tag-games");
+const tagMovie = document.getElementById("tag-movie");
+const tagSince = document.getElementById("tag-sience");
 
 let activeTagBtn = tagAll;
 
-tagAll.addEventListener("click", ()=>{
+tagAll.addEventListener("click", () => {
     fillQuiz(tests);
     switchTagBtn(tagAll);
 });
@@ -23,21 +23,39 @@ fetch("test-data.json")
     .then(json => {
         tests = json.tests;
         fillQuiz(tests);
+
+        let bestTestLine = document.getElementById("best-testes-line");
+        bestTestLine.innerHTML = "";
+        for (let i = 0; i < elementsCount; i++) {
+            let curentTest = tests[i];
+            const bestTest = document.createElement("div");
+            bestTest.classList.add("best-testes__quiz-pannel");
+            bestTest.style.backgroundImage = `url(${curentTest.icon})`;
+            
+            bestTest.innerHTML = 
+            `
+            <p>${curentTest.discription}</p>
+            <a href="testWindow.html?testid=${i}&file=${curentTest.file}">Решать</a>
+            `;
+
+            bestTestLine.appendChild(bestTest);
+        }
+
+        initSlider();
     });
 
 
 
-function quizFilter(filterName, tagButton){
+function quizFilter(filterName, tagButton) {
     let type = filterName;
     let btn = tagButton;
-    return function()
-    {
+    return function () {
         switchTagBtn(btn);
         fillQuiz(tests.filter(j => j.type == type));
     }
 }
 
-function switchTagBtn (newTagBtn) {
+function switchTagBtn(newTagBtn) {
     activeTagBtn.classList.remove("filter__tag-selected");
     newTagBtn.classList.add("filter__tag-selected");
     activeTagBtn = newTagBtn;
