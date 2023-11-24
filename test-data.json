@@ -1,0 +1,9 @@
+{
+    "tests": [
+        {
+            "title": "Тест по геншину",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "game"
+        }
+    ]
+}

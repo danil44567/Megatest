@@ -125,15 +125,10 @@ fetch("tests/genshin.json")
     .then(json => {
         questions = json.questions;
         quizTitle = json.title;
-        console.log(json);
-        console.log(json.image)
-        document.body.style.backgroundImage = `url(${json.image})`
-        // document.getElementsByTagName('main');
+        document.body.style.backgroundImage = `url(${json.image})`;
         initQuiz();
     });
-
-// console.log(window.location.search);
-
+    
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('testid');
 

@@ -69,6 +69,7 @@ body{
 .pagination_list button{
     width: 100px;
     height: 100px;
+    background: none;
     background-image: url("img/Vector\ 7.png");
     margin: 46px;
     color: #FFF;
