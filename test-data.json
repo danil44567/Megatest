@@ -1,9 +1,88 @@
 {
     "tests": [
         {
-            "title": "Тест по геншину",
+            "title": "Тест по геншину (игра)",
             "icon": "img/icons/genshinIcon.png",
-            "type": "game"
+            "type": "game",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (игра)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "game",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (игра)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "game",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (фильм)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "movie",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (фильм)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "movie",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (фильм)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "movie",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (фильм)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "movie",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (наука)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "sience",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (наука)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "sience",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (наука)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "sience",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (наука)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "sience",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
+        },
+        {
+            "title": "Тест по геншину (наука)",
+            "icon": "img/icons/genshinIcon.png",
+            "type": "sience",
+            "discription": "Какое-то крутое описание теста по геншину",
+            "file": "genshin"
         }
     ]
 }
