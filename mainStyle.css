@@ -8,14 +8,10 @@ body {
     line-height: normal;
 }
 
+
 p,
 h3 {
     margin: 0;
-}
-
-@font-face {
-    font-family: Inter;
-    src: url(fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 main {
@@ -279,7 +275,7 @@ main {
     height: 24.479vw;
     /* max-height: 470px; */
     /* max-width: 800px; */
-    background-image: url("img/EmptyIcon.png");
+    background-image: url("img/icons/EmptyIcon.png");
     background-size: cover;
     display: flex;
     flex-direction: row;
