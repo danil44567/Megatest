@@ -28,8 +28,7 @@ document.querySelector('.arrow-right').addEventListener('click', () => {
     sliderLine.style.left = offset + "px";
 });
 
-function getMaxElementPos(width)
-{
+function getMaxElementPos(width) {
     let curElemCount = elementsCount + elementsCountOffset;
     return -((curElemCount * width) + (curElemCount * gap))
 }
@@ -39,9 +38,9 @@ window.addEventListener('resize', function (event) {
 
     let temp = getComputedStyle(sliderLine).getPropertyValue('transition');
     sliderLine.style.transition = "none";
-    
+
     let maxElements = elementsCount + elementsCountOffset;
-    if (curentElement >=  maxElements)
+    if (curentElement >= maxElements)
         curentElement = maxElements;
     let width = pannel.offsetWidth;
     offset = -(((curentElement * width) + (curentElement * gap)));
