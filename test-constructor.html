@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интеллитест - Конструктор</title>
+</head>
+
+<body>
+    <h1>Конструктор</h1>
+    <div>
+        <input type="text" placeholder="Вопрос" id="question">*
+    </div>
+    <ol>
+        <li>
+            <input type="text" placeholder="Вариант" id="variant1">*
+        </li>
+        <li>
+            <input type="text" placeholder="Вариант" id="variant2">*
+        </li>
+        <li>
+            <input type="text" placeholder="Вариант" id="variant3">*
+        </li>
+        <li>
+            <input type="text" placeholder="Вариант" id="variant4">*
+        </li>
+    </ol>
+    <div class="correct-variant">
+        <p>Правльный вариант</p>
+        <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+        <input id="correct-answer" type="number" min="1" max="4" value="1" readonly class="raz">
+        <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+    </div>
+
+    <div>
+        <button id="testadd">Добавить</button>
+        <button id="testremove">Очистить поля</button>
+    </div>
+
+    <div id="added-questions">
+        <!-- <div class="added-questions__question">
+            <p>Вопрос</p>
+            <ol>
+                <li>Ответ</li>
+                <li>Ответ</li>
+                <li>Ответ</li>
+                <li>Ответ</li>
+            </ol>
+            <p>Верный ответ: </p>
+        </div> -->
+    </div>
+    <div>
+        <input type="text" placeholder="Название теста" id="test-name">*
+    </div>
+    <button id="getjson">Получить json</button>
+    <input id="json" type="text" readonly>
+    <script>
+        const addbtn = document.getElementById("testadd");
+        const removebtn = document.getElementById("testremove")
+        const jsonbtn = document.getElementById("getjson")
+        const jsontext = document.getElementById("json");
+
+        const questions = document.getElementById("added-questions");
+        const question = document.getElementById("question");
+        const variant1 = document.getElementById("variant1");
+        const variant2 = document.getElementById("variant2");
+        const variant3 = document.getElementById("variant3");
+        const variant4 = document.getElementById("variant4");
+        const answer = document.getElementById("correct-answer");
+        const title = document.getElementById("test-name");
+
+        let test = {
+            title: "",
+            image: "",
+            questions: []
+        }
+
+        jsonbtn.addEventListener('click', () => {
+            alertText = ""
+            let testName = title.value;
+            if (testName == "")
+                alertText += "Название теста пустое\n";
+            else if (testName.length > 150)
+                alertText += "Название теста не более 30 символов\n";
+
+
+            if (test.questions.length == 0)
+                alertText += "Не добавлен ни один вопрос"
+
+            if (alertText != "") {
+                alert(alertText);
+                return;
+            }
+            test.title = testName;
+            let json = JSON.stringify(test);
+            // navigator.clipboard.writeText(json)
+            jsontext.value = json;
+            jsontext.select();
+            document.execCommand('copy');
+            alert("JSON скопирован в буфер обмена");
+            console.log(json);
+            
+        });
+
+        removebtn.addEventListener('click', () => {
+            question.value = "";
+            variant1.value = "";
+            variant2.value = "";
+            variant3.value = "";
+            variant4.value = "";
+        });
+
+        addbtn.addEventListener('click', () => {
+
+            alertText = ""
+            let quest = question.value;
+            if (quest == "")
+                alertText += "Вопрос пустой\n";
+            else if (quest.length > 150)
+                alertText += "Вопрос не более 150 символов\n";
+            let vList = [variant1.value, variant2.value, variant3.value, variant4.value]
+            vList.forEach((v, i) => {
+                if (v == "")
+                    alertText += "Ответ " + (i + 1) + " пустой\n";
+                else if (v.length > 30)
+                    alertText += "Ответ " + (i + 1) + " не более 30 символов\n";
+
+            });
+            let ans = answer.value;
+            if (alertText != "") {
+                alert(alertText);
+                return;
+            }
+
+            let questData = {
+                question: quest,
+                options: vList,
+                correctIndex: (+answer.value) - 1
+            }
+            test.questions.push(questData);
+
+            const newElem = document.createElement('div');
+            newElem.classList.add("added-questions__question");
+            newElem.innerHTML = `            
+            <p>${quest}</p>
+            <ol>
+                <li>${vList[0]}</li>
+                <li>${vList[1]}</li>
+                <li>${vList[2]}</li>
+                <li>${vList[3]}</li>
+            </ol>
+            <p>Верный ответ: ${ans}</p>
+            `;
+            questions.appendChild(newElem);
+        });
+    </script>
+</body>
+<style>
+    .raz {
+        all: unset;
+        /* -moz-appearance: textfield; */
+        width: 3em;
+        text-align: center;
+    }
+
+    .raz::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    body,
+    p,
+    h1,
+    ol {
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    ol {
+        padding: 0;
+    }
+
+    .correct-variant {
+        text-align: center;
+    }
+
+    #added-questions {
+        width: 80%;
+    }
+
+    .added-questions__question {
+        width: 100%;
+        border: 1px black solid;
+        padding: 5px;
+    }
+
+    .added-questions__question ol {
+        padding-left: 20px;
+    }
+
+    #json{
+        border: none;
+    }
+</style>
+
+</html>

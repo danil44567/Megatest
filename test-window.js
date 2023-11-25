@@ -1,7 +1,7 @@
 // Ваши вопросы и варианты ответов
 let questions = [];
 let quizTitle = "";
-
+const backgroundsFloder = "img/backgrounds/";
 
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
@@ -119,17 +119,18 @@ function showFinalScore() {
     const restartButton = quizContainer.querySelector(".restart-btn");
     restartButton.addEventListener("click", initQuiz);
 }
+    
+const urlParams = new URLSearchParams(window.location.search);
+const testId = urlParams.get('testid');
+const fileName = urlParams.get('file');
 
-fetch("tests/genshin.json")
+fetch(`tests/${fileName}.json`)
     .then(response => response.json())
     .then(json => {
         questions = json.questions;
         quizTitle = json.title;
-        document.body.style.backgroundImage = `url(${json.image})`;
+        document.title += " " + quizTitle;
+        if (json.image != "")
+            document.body.style.backgroundImage = `url(${backgroundsFloder + json.image})`;
         initQuiz();
     });
-    
-const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('testid');
-
-console.log(myParam)
