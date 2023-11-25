@@ -31,11 +31,14 @@ main {
     text-decoration: none;
     flex: 0 0 auto;
     width: calc((100% / 3) - (48px / 3));
+
+    transition: transform 0.2s;
 }
 
 .quizPannel:hover {
     color: gray;
     display: block;
+    transform: scale(1.03);
 }
 
 .hiddenTextDiv {
@@ -184,11 +187,24 @@ main {
     background: #0F4C75;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
     display: inline-block;
+    transition: transform 0.2s;
+}
+
+.filter__tag:hover {
+    background: #125e90;
+    box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25);
+    transform: scale(1.03);
 }
 
 .filter__tag-selected {
     background: #3282B8;
     box-shadow: none
+}
+
+.filter__tag-selected:hover {
+    background: #3282B8;
+    box-shadow: none;
+    transform: scale(1);
 }
 
 .filter__tag p {
@@ -229,11 +245,19 @@ main {
     margin: 0;
     z-index: 10;
     flex: 0 1 5%;
+    
 }
 
 .best-testes__arrow {
     width: 100%;
     height: 100%;
+    transition: transform 0.2s;
+    
+}
+
+.best-testes__slider-button:hover .best-testes__arrow{
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+    transform: scale(1.03);
 }
 
 .best-testes__quiz-container {
@@ -290,6 +314,18 @@ main {
     margin: 0;
     color: #000;
     font-weight: 500;
+    flex: 0 1 50%;
+    text-shadow: 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white, 
+    0px 0px 20px white;
 }
 
 .best-testes__quiz-pannel a {
@@ -308,12 +344,18 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 0;
-    margin: 0; */
     color: #FFF;
     text-align: center;
     font-size: 2.34375vw;
     font-weight: 800;
+
+    transition: transform 0.2s;
+}
+
+.best-testes__quiz-pannel a:hover {
+    color: #c2e2f7;
+    transform: scale(1.03);
+    /* box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25); */
 }
 
 .quiz-content {

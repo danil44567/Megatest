@@ -1,10 +1,15 @@
 let offset = 0;
-const sliderLine = document.querySelector(".best-testes__quiz-line");
-const pannel = document.querySelector('.best-testes__quiz-pannel');
 const gap = 24;
-const elementsCount = document.getElementsByClassName('best-testes__quiz-pannel').length;
+const sliderLine = document.getElementById("best-testes-line");
+let pannel;
+const elementsCount = 5;
 let elementsCountOffset = window.screen.width < 900 ? -1 : -2;
 let curentElement = 0;
+
+function initSlider()
+{
+    pannel = document.querySelector('.best-testes__quiz-pannel');
+}
 
 document.querySelector('.arrow-left').addEventListener('click', () => {
     let width = pannel.offsetWidth;
