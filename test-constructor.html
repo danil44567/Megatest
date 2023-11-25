@@ -136,7 +136,7 @@
             let questData = {
                 question: quest,
                 options: vList,
-                correctIndex: +ans
+                correctIndex: (+answer.value) - 1
             }
             test.questions.push(questData);
 
