@@ -1,86 +1,16 @@
 {
     "tests": [
         {
-            "title": "Тест по геншину (игра)",
+            "title": "Тест по PsychoBeats",
+            "icon": "PsychoBeats.jpg",
+            "type": "game",
+            "discription": "Тест по прекрасной игре от легендарных разработчиков",
+            "file": "PsychoBeats"
+        },
+        {
+            "title": "Тест по Genshin Impact",
             "icon": "genshinIcon.png",
             "type": "game",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (игра)",
-            "icon": "genshinIcon.png",
-            "type": "game",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (игра)",
-            "icon": "genshinIcon.png",
-            "type": "game",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (фильм)",
-            "icon": "genshinIcon.png",
-            "type": "movie",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (фильм)",
-            "icon": "genshinIcon.png",
-            "type": "movie",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (фильм)",
-            "icon": "genshinIcon.png",
-            "type": "movie",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (фильм)",
-            "icon": "",
-            "type": "movie",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (наука)",
-            "icon": "genshinIcon.png",
-            "type": "sience",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (наука)",
-            "icon": "genshinIcon.png",
-            "type": "sience",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (наука)",
-            "icon": "genshinIcon.png",
-            "type": "sience",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (наука)",
-            "icon": "genshinIcon.png",
-            "type": "sience",
-            "discription": "Какое-то крутое описание теста по геншину",
-            "file": "genshin"
-        },
-        {
-            "title": "Тест по геншину (наука)",
-            "icon": "genshinIcon.png",
-            "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
@@ -97,6 +27,20 @@
             "type": "movie",
             "discription": "Таинственный тест по сериалу Гравити Фолз: проверьте свои знания  о его героях и тайн, которыми наполнен городок. Ну что, юнные детективы, готовы? Тогда вперед!",
             "file": "gravityFalls"
+        },
+        {
+            "title": "Тест по трансформерам",
+            "icon": "tansformers.jpg",
+            "type": "movie",
+            "discription": "Пройдите захватывающий тест по франшизе Трансформеры! Проверьте свои знания об автоботах, децептиконах и мире Майкла Бэя. Подготовьтесь к решающей битве за право называться истинным фанатом!",
+            "file": "tansformers"
+        },
+        {
+            "title": "Тест по математическому анализу",
+            "icon": "matAnal.jpg",
+            "type": "sience",
+            "discription": "Пройдите тест по математическому анализу: пределы, производные, интегралы. Проверьте свои знания в теории функций и последовательностей",
+            "file": "matAnal"
         }
     ]
 }

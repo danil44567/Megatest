@@ -129,6 +129,7 @@ fetch(`tests/${fileName}.json`)
     .then(json => {
         questions = json.questions;
         quizTitle = json.title;
+        document.title += " " + quizTitle;
         if (json.image != "")
             document.body.style.backgroundImage = `url(${backgroundsFloder + json.image})`;
         initQuiz();
