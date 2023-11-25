@@ -7,8 +7,15 @@ body{
     margin: 0;
     background-color: #F5F5F5;
     font-family: Inter;
+    
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }
 
+header,footer{
+    flex-shrink: 0;
+}
 
 .test_list_container{
     min-height: 701px;
