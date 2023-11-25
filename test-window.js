@@ -1,7 +1,7 @@
 // Ваши вопросы и варианты ответов
 let questions = [];
 let quizTitle = "";
-
+const backgroundsFloder = "img/backgrounds/";
 
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
@@ -129,6 +129,7 @@ fetch(`tests/${fileName}.json`)
     .then(json => {
         questions = json.questions;
         quizTitle = json.title;
-        document.body.style.backgroundImage = `url(${json.image})`;
+        if (json.image != "")
+            document.body.style.backgroundImage = `url(${backgroundsFloder + json.image})`;
         initQuiz();
     });
