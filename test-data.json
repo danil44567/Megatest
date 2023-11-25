@@ -2,98 +2,98 @@
     "tests": [
         {
             "title": "Тест по геншину (игра)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "game",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (игра)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "game",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (игра)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "game",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (фильм)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "movie",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (фильм)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "movie",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (фильм)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "movie",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (фильм)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "",
             "type": "movie",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (наука)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (наука)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (наука)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (наука)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по геншину (наука)",
-            "icon": "img/icons/genshinIcon.png",
+            "icon": "genshinIcon.png",
             "type": "sience",
             "discription": "Какое-то крутое описание теста по геншину",
             "file": "genshin"
         },
         {
             "title": "Тест по Гарри Поттеру",
-            "icon": "img/icons/potterIcon.jpg",
+            "icon": "potterIcon.jpg",
             "type": "movie",
             "discription": "Волшебный тест по Гарри Поттеру: проверьте свои знания о Хогвартсе, заклинаниях и приключениях героев. Готовы к волшебному вызову?",
             "file": "poter"
         },
         {
             "title": "Тест Гравити фолз",
-            "icon": "img/icons/gravityFallsIcon.jpg",
+            "icon": "gravityFallsIcon.jpg",
             "type": "movie",
             "discription": "Таинственный тест по сериалу Гравити Фолз: проверьте свои знания  о его героях и тайн, которыми наполнен городок. Ну что, юнные детективы, готовы? Тогда вперед!",
             "file": "gravityFalls"

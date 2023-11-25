@@ -1,5 +1,6 @@
 
 let tests;
+const iconsFloder = "img/icons/";
 
 const tagAll = document.getElementById("tag-all");
 const tagGames = document.getElementById("tag-games");
@@ -30,10 +31,11 @@ fetch("test-data.json")
             let curentTest = tests[i];
             const bestTest = document.createElement("div");
             bestTest.classList.add("best-testes__quiz-pannel");
-            bestTest.style.backgroundImage = `url(${curentTest.icon})`;
-            
-            bestTest.innerHTML = 
-            `
+            let icon = iconsFloder + (curentTest.icon == "" ? "EmptyIcon.png" : curentTest.icon);
+            bestTest.style.backgroundImage = `url(${icon})`;
+
+            bestTest.innerHTML =
+                `
             <p>${curentTest.discription}</p>
             <a href="testWindow.html?testid=${i}&file=${curentTest.file}">Решать</a>
             `;
@@ -69,9 +71,10 @@ function fillQuiz(arr) {
         const resultsContainer = document.createElement("a");
         resultsContainer.classList.add("quizPannel");
         resultsContainer.href = `testWindow.html?testid=${index}&file=${element.file}`
+        let icon = iconsFloder + (element.icon == "" ? "EmptyIcon.png" : element.icon);
         resultsContainer.innerHTML =
             `
-        <img src="${element.icon}">
+        <img src="${icon}">
         <span class="hiddenText">${element.discription}</span>
         <h2 class="title">${element.title}</h2>
         `;

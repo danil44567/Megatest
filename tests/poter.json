@@ -1,6 +1,6 @@
 {
     "title": "Тест по Гарри Поттеру",
-    "image": "img/backgrounds/potterBack.jpg",
+    "image": "potterBack.jpg",
     "questions": [
         {
             "question": "Как называется школа, в которой учится Гарри Поттер?",
