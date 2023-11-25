@@ -1,0 +1,76 @@
+{
+    "title": "Тест по PsychoBeats",
+    "image": "PsychoBeats.jpg",
+    "questions": [
+        {
+            "question": "Какого цвета нет в игре?",
+            "options": [
+                "Чёрный",
+                "Белый",
+                "Жёлтый",
+                "Фиолетовый"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "На каком языке программирования написана игра?",
+            "options": [
+                "Python",
+                "C#",
+                "JavaScript",
+                "Pascal"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "question": "Сколько всего вариантов сложностей у песен существует?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "Какой песни нет в игре?",
+            "options": [
+                "Наруто",
+                "Гуррен-Лаганн",
+                "Хантер х Хантер",
+                "Данганронпа"
+            ],
+            "correctIndex": 3
+        },
+        {
+            "question": "Какую максимальную оценку можно получить за одну песню?",
+            "options": [
+                "A",
+                "S",
+                "SS",
+                "S+"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "question": "Сколько цветов в логотипе игры?",
+            "options": [
+                "3",
+                "4",
+                "2",
+                "1"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "question": "Какая сложность стоит у песни \"Fate Stay Night\"?",
+            "options": [
+                "Medium",
+                "Easy",
+                "Hard",
+                "Expert"
+            ],
+            "correctIndex": 0
+        }
+    ]
+}
