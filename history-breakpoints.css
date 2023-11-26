@@ -1,4 +1,11 @@
 @media screen and (max-width: 1536px) {
+    .test_list_container{
+        font-size: 48px;
+        margin: 32.8px 139.2px 80px;
+        gap:80px}
+    .test_list_container img{max-width: 137.6px;}
+    .test_name{padding:10.9px 55.2px;}
+    .test_score{padding:10.9px 55.2px;}
 
 }
 
