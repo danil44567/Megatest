@@ -29,7 +29,7 @@ header,footer{
 .test_list_container img{
     width: 172px;
     height: 101px;
-    flex-shrink: 0;
+
     border-radius: 35px;
     margin-right: 20px;
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
@@ -46,7 +46,7 @@ header,footer{
     max-width: 1378px;
     border-radius: 35px;
     background: #BBE1FA;  
-    padding: 10px 69px;
+    padding: 13.625px 69px;
     margin-right: 20px;
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
 }
@@ -56,7 +56,7 @@ header,footer{
     margin-left: auto;
     border-radius: 35px;
     background: #BBE1FA;  
-    padding: 10px 69px;
+    padding: 13.625px 69px;
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
 
 }
