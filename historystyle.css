@@ -63,6 +63,8 @@ flex-direction: row;
 }
 
 .test_score{
+    display: flex;
+    justify-content: center;
     /*max-width: 275px;*/
     flex:0 1 14.32%;
     /* margin-left: auto; */
