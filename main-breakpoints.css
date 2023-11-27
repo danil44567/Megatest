@@ -70,6 +70,10 @@
     .quiz-content {
         padding: 0 140px;
     }
+
+    .hiddenText {
+        padding: 16px;
+    }
 }
 
 @media screen and (max-width: 1250px) {
@@ -106,6 +110,10 @@
 
     .quiz-content {
         padding: 0 100px;
+    }
+
+    .hiddenText {
+        padding: 14px;
     }
 }
 
@@ -171,6 +179,10 @@
     .best-testes__quiz-container{
         width: auto;
         flex: 1 1 80%;
+    }
+
+    .hiddenText {
+        padding: 10px;
     }
 }
 
@@ -261,6 +273,10 @@
 
     .quizContainer {
         gap: 18px;
+    }
+
+    .hiddenText {
+        padding: 8px;
     }
 }
 
