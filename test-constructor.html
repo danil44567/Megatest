@@ -27,7 +27,7 @@
         </li>
     </ol>
     <div class="correct-variant">
-        <p>Правльный вариант</p>
+        <p>Правильный вариант</p>
         <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
         <input id="correct-answer" type="number" min="1" max="4" value="1" readonly class="raz">
         <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
@@ -54,10 +54,12 @@
         <input type="text" placeholder="Название теста" id="test-name">*
     </div>
     <button id="getjson">Получить json</button>
+    <button id="clearall">Очистить всё</button>
     <input id="json" type="text" readonly>
     <script>
         const addbtn = document.getElementById("testadd");
         const removebtn = document.getElementById("testremove")
+        const clearbtn = document.getElementById("clearall");
         const jsonbtn = document.getElementById("getjson")
         const jsontext = document.getElementById("json");
 
@@ -74,6 +76,14 @@
             title: "",
             image: "",
             questions: []
+        }
+
+        if (localStorage.constructorSave != null) {
+            test = JSON.parse(localStorage.constructorSave);
+
+            test.questions.forEach(q => {
+                createElemets(q.question, q.options, q.correctIndex + 1);
+            });
         }
 
         jsonbtn.addEventListener('click', () => {
@@ -100,7 +110,7 @@
             document.execCommand('copy');
             alert("JSON скопирован в буфер обмена");
             console.log(json);
-            
+
         });
 
         removebtn.addEventListener('click', () => {
@@ -109,6 +119,7 @@
             variant2.value = "";
             variant3.value = "";
             variant4.value = "";
+            answer.value = 1;
         });
 
         addbtn.addEventListener('click', () => {
@@ -140,6 +151,35 @@
             }
             test.questions.push(questData);
 
+            createElemets(quest, vList, ans);
+            localStorage.constructorSave = JSON.stringify(test);
+        });
+
+        clearbtn.addEventListener('click', () => {
+            if (confirm("Это дейсвтие очистит все введёные вопросы и очистит все поля. Вы уверены?") == false) {
+                return;
+            }
+
+            test = {
+                title: "",
+                image: "",
+                questions: []
+            }
+
+            localStorage.removeItem('constructorSave');
+
+            questions.innerHTML = "";
+            question.value = "";
+            variant1.value = "";
+            variant2.value = "";
+            variant3.value = "";
+            variant4.value = "";
+            jsontext.value = "";
+            title.value = "";
+            answer.value = 1;
+        })
+
+        function createElemets(quest, vList, ans) {
             const newElem = document.createElement('div');
             newElem.classList.add("added-questions__question");
             newElem.innerHTML = `            
@@ -153,7 +193,7 @@
             <p>Верный ответ: ${ans}</p>
             `;
             questions.appendChild(newElem);
-        });
+        }
     </script>
 </body>
 <style>
@@ -205,7 +245,7 @@
         padding-left: 20px;
     }
 
-    #json{
+    #json {
         border: none;
     }
 </style>

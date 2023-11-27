@@ -82,3 +82,5 @@ function fillQuiz(arr) {
         quizContainer.appendChild(resultsContainer);
     });
 }
+
+console.log(localStorage.testsave)

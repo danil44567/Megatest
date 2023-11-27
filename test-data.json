@@ -11,7 +11,7 @@
             "title": "Тест по Genshin Impact",
             "icon": "genshinIcon.png",
             "type": "game",
-            "discription": "Какое-то крутое описание теста по геншину",
+            "discription": "Пройдите увлекательный тест по миру Genshin Impact! Проверьте свои знания о персонажах, элементах и локациях этой захватывающей RPG.",
             "file": "genshin"
         },
         {
@@ -41,6 +41,13 @@
             "type": "sience",
             "discription": "Пройдите тест по математическому анализу: пределы, производные, интегралы. Проверьте свои знания в теории функций и последовательностей",
             "file": "matAnal"
+        },
+        {
+            "title": "Чарли и шоколадная фабрика",
+            "icon": "charlieChockolate.jpg",
+            "type": "movie",
+            "discription": "Тест по Чарли и шоколадная фабрика",
+            "file": "charlieChockolate"
         }
     ]
 }

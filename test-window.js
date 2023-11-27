@@ -118,8 +118,38 @@ function showFinalScore() {
 
     const restartButton = quizContainer.querySelector(".restart-btn");
     restartButton.addEventListener("click", initQuiz);
+
+    let tests;
+    if (localStorage.testsave == null) {
+        tests =
+        {
+            tests: [
+                {
+                    testid: testId,
+                    result: correctAnswers
+                }
+            ]
+        }
+    }
+    else {
+        tests = JSON.parse(localStorage.testsave);
+        let index = tests.tests.findIndex(t => t.testid == testId);
+        if (index == -1) {
+            tests.tests.push(
+                {
+                    testid: testId,
+                    result: correctAnswers
+                }
+            );
+        }
+        else if (tests.tests[index].result < correctAnswers) {
+            tests.tests[index].result = correctAnswers;
+        }
+    }
+
+    localStorage.testsave = JSON.stringify(tests);
 }
-    
+
 const urlParams = new URLSearchParams(window.location.search);
 const testId = urlParams.get('testid');
 const fileName = urlParams.get('file');
