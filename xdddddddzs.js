@@ -10,13 +10,13 @@ async function get_question_count(file){
     return questionCount
 }
 
-let usersTests = JSON.parse(localStorage.testsave)
+
 
 fetch(`test-data.json`)
     .then(response => response.json())
     .then(json => {
         let allTests = json.tests
-        
+        let usersTests = JSON.parse(localStorage.testsave)
         let promises=[]
         usersTests.tests.forEach(element => {
             let currentTest = allTests[element.testid]
@@ -37,7 +37,7 @@ fetch(`test-data.json`)
         for (let index = 0; index < a.length; index++) {
             //usersTests.test[index]
             //a[i]
-            let currentTest = usersTests.tests[index]
+            let currentTest = allTests[index]
             const resultsContainer = document.createElement("div")
             resultsContainer.classList.add("test_list_element")
             let icon = iconsFloder + (currentTest.icon == "" ? "EmptyIcon.png" : currentTest.icon)
