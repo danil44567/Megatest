@@ -15,7 +15,7 @@ footer {
     line-height: normal;
 }
 
-h3{
+h3 {
     margin: 0;
 }
 
@@ -246,24 +246,26 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
+
     header,
     footer {
-        
+
         height: 50px;
         padding-right: 10px;
         padding-left: 10px;
     }
 
-    header{
+    header {
         border-radius: 0px 0px 20px 20px;
     }
 
-    footer{
+    footer {
         border-radius: 20px 20px 0px 0px;
         gap: 8px;
+        font-size: 12px;
     }
 
-    .footer__links{
+    .footer__links {
         gap: 15px;
     }
 
@@ -283,7 +285,7 @@ footer {
         height: 27.49px;
     }
 
-    header .right{
+    header .right {
         font-size: 0.75em;
     }
 }

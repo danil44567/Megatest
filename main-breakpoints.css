@@ -52,19 +52,14 @@
         gap: 16px;
     }
 
+    #pagination__buttons{
+        gap: 16px;
+    }
+
     .pagination__button {
         width: 59.2px;
         height: 59.2px;
-    }
-
-
-    .pagination__button div {
         border-radius: 6.4px;
-    }
-
-    .pagination__button svg {
-        width: 30.4px;
-        height: 54.4px;
     }
 
     .quiz-content {
@@ -134,7 +129,7 @@
         height: 40px;
     }
 
-    .pagination__button div {
+    .pagination__button {
         border-radius: 5px;
     }
 
@@ -286,19 +281,17 @@
         gap: 10px;
     }
 
+    #pagination__buttons{
+        gap: 10px;
+    }
+
     .pagination__button {
         width: 30px;
         height: 30px;
-    }
-
-    .pagination__button div {
         border-radius: 5px;
-    }
-
-    .pagination__button div p {
         font-size: 1.5em;
     }
-
+    
     .arrow-left {
         left: 17px;
     }
