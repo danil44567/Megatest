@@ -1,19 +1,101 @@
-@media screen and (max-width: 1536px) {
+@media screen and (max-width: 1536px) { 
+    /* 0.8 */
+    .test_list_container{
+        font-size: 48px;
+        margin: 32.8px 139.2px 80px;
+        gap:80px}
+    .test_list_container img{max-width: 137.6px;}
+    .test_name{padding:10.9px 55.2px;}
+    .test_score{padding:10.9px 55.2px;}
 
+    .pagination{gap: 65.6px}
+    .pagination button{
+        width: 80px;
+        height: 80px;
+        font-size: 48px;
+    }
+
+    .pagination_list{gap: 36.8px}
 }
 
 @media screen and (max-width: 1250px) {
+    /* 0.6 */
+    .test_list_container{
+        font-size: 36px;
+        margin: 24.6px 104.4px 60px;
+        gap:60px}
+    .test_list_container img{max-width: 103.2px;}
+    .test_name{padding:8.175px 41.4px;}
+    .test_score{padding:8.175px 41.4px;}
 
+    .pagination{gap: 49.2px}
+    .pagination button{
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+    .pagination_list{gap: 27.6px}
 }
 
 @media screen and (max-width: 900px) {
+    /* 0.5 */
+    .test_list_container{
+        font-size: 30px;
+        margin: 20.5px 20px 50px;/* margin: 20.5px 87px 50px; */
+        gap:50px}
+    .test_list_container img{max-width: 86px;}
+    .test_name{padding:6.9px 34.5px;}
+    .test_score{padding:6.9px 34.5px;}
 
-}
+    .pagination{gap: 41px}
+    .pagination button{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    .pagination_list{gap: 23px}
+    }
 
 @media screen and (max-width: 650px) {
+    /* 0.4 */
+    .test_list_container{
+        font-size: 24px;
+        margin: 16.4px 10px 40px;/* margin: 16.4px 69.6px 40px; */
+        gap:40px}
+    .test_list_element{gap:10px}
+    .test_list_container img{max-width: 68.8px}
+    .test_name{padding:5.5px 27.6px}
+    .test_score{padding:5.5px 27.6px}
 
+    .pagination{gap: 32.8px}
+    .pagination button{
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .pagination_list{gap: 18.4px}
 }
 
 @media screen and (max-width: 450px) {
+    .test_list_container{
+        font-size: 20px;/* font-size: 24px; */
+        margin: 16.4px 5px 30px;
+        gap:30px}
+    .test_list_element{gap:5px;}
+    .test_list_container img{max-width: 68.8px;
+        margin-right: 5px;}
+    .test_name{padding:8px 5.5px;
+        margin-right: 5px;}
+    .test_score{padding:8px 5px;}
 
+    .pagination{gap: 10px}
+    .pagination button{
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    #pagination-left{display: none;}
+
+    #pagination-right{display: none;}
+    .pagination_list{gap: 18.4px}
 }
