@@ -14,10 +14,7 @@
         height: 80px;
         font-size: 48px;
     }
-    #pagination-left{
-        width: 80px;
-        height: 80px;
-    }
+
     .pagination_list{gap: 36.8px}
 }
 
@@ -30,6 +27,14 @@
     .test_list_container img{max-width: 103.2px;}
     .test_name{padding:8.175px 41.4px;}
     .test_score{padding:8.175px 41.4px;}
+
+    .pagination{gap: 49.2px}
+    .pagination button{
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+    .pagination_list{gap: 27.6px}
 }
 
 @media screen and (max-width: 900px) {
@@ -41,6 +46,14 @@
     .test_list_container img{max-width: 86px;}
     .test_name{padding:6.9px 34.5px;}
     .test_score{padding:6.9px 34.5px;}
+
+    .pagination{gap: 41px}
+    .pagination button{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    .pagination_list{gap: 23px}
     }
 
 @media screen and (max-width: 650px) {
@@ -53,6 +66,14 @@
     .test_list_container img{max-width: 68.8px}
     .test_name{padding:5.5px 27.6px}
     .test_score{padding:5.5px 27.6px}
+
+    .pagination{gap: 32,8px}
+    .pagination button{
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .pagination_list{gap: 18.4px}
 }
 
 @media screen and (max-width: 450px) {
@@ -66,4 +87,12 @@
     .test_name{padding:8px 5.5px;
         margin-right: 5px;}
     .test_score{padding:8px 5px;}
+
+    .pagination{gap: 32,8px}
+    .pagination button{
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .pagination_list{gap: 18.4px}
 }
