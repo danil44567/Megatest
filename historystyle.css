@@ -96,6 +96,7 @@ flex-direction: row;
     width: 100px;
     height: 100px;
     background: none;
+    background-size: cover;
 
     color: #FFF;
     text-align: center;

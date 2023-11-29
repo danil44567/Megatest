@@ -67,7 +67,7 @@
     .test_name{padding:5.5px 27.6px}
     .test_score{padding:5.5px 27.6px}
 
-    .pagination{gap: 32,8px}
+    .pagination{gap: 32.8px}
     .pagination button{
         width: 40px;
         height: 40px;
@@ -88,11 +88,14 @@
         margin-right: 5px;}
     .test_score{padding:8px 5px;}
 
-    .pagination{gap: 32,8px}
+    .pagination{gap: 10px}
     .pagination button{
         width: 40px;
         height: 40px;
         font-size: 24px;
     }
+    #pagination-left{display: none;}
+
+    #pagination-right{display: none;}
     .pagination_list{gap: 18.4px}
 }
