@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интеллитест - Конструктор</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 </head>
 
 <body>
@@ -12,7 +13,7 @@
     <div>
         <input type="text" placeholder="Вопрос" id="question">*
     </div>
-    <ol>
+    <ol class="input-answers">
         <li>
             <input type="text" placeholder="Вариант" id="variant1">*
         </li>
@@ -40,7 +41,7 @@
 
     <div id="added-questions">
         <!-- <div class="added-questions__question">
-            <p>Вопрос</p>
+            <p class="added-questions__question-text">Вопрос</p>
             <ol>
                 <li>Ответ</li>
                 <li>Ответ</li>
@@ -71,6 +72,8 @@
         const variant4 = document.getElementById("variant4");
         const answer = document.getElementById("correct-answer");
         const title = document.getElementById("test-name");
+
+        answer.addEventListener('input', () => console.log("asd"))
 
         let test = {
             title: "",
@@ -183,20 +186,24 @@
             const newElem = document.createElement('div');
             newElem.classList.add("added-questions__question");
             newElem.innerHTML = `            
-            <p>${quest}</p>
+            <p class="added-questions__question-text">${quest}</p>
             <ol>
-                <li>${vList[0]}</li>
-                <li>${vList[1]}</li>
-                <li>${vList[2]}</li>
-                <li>${vList[3]}</li>
+                <li${ans == 1 ? ' class="correct-answer-in-list"' : ""}>${vList[0]}</li>
+                <li${ans == 2 ? ' class="correct-answer-in-list"' : ""}>${vList[1]}</li>
+                <li${ans == 3 ? ' class="correct-answer-in-list"' : ""}>${vList[2]}</li>
+                <li${ans == 4 ? ' class="correct-answer-in-list"' : ""}>${vList[3]}</li>
             </ol>
-            <p>Верный ответ: ${ans}</p>
             `;
             questions.appendChild(newElem);
         }
     </script>
 </body>
 <style>
+    @font-face {
+        font-family: Inter;
+        src: url(fonts/Inter-VariableFont_slnt\,wght.ttf);
+    }
+
     .raz {
         all: unset;
         /* -moz-appearance: textfield; */
@@ -221,6 +228,7 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+        font-family: Inter;
     }
 
     ol {
@@ -233,12 +241,17 @@
 
     #added-questions {
         width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
     .added-questions__question {
         width: 100%;
         border: 1px black solid;
         padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0px 1px 5px black
     }
 
     .added-questions__question ol {
@@ -248,6 +261,52 @@
     #json {
         border: none;
     }
+
+    .correct-answer-in-list {
+        color: green;
+        font-weight: 800;
+    }
+
+    .added-questions__question-text {
+        text-decoration: underline;
+    }
+
+    button {
+        border: none;
+        background: #0F4C75;
+        color: white;
+        box-shadow: 0px 1px 5px black;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 5px 10px;
+    }
+
+    .correct-answer-in-list::after {
+        content: "✔";
+        font-size: 14px;
+        color: green;
+        position: absolute;
+        margin-left: 5px;
+    }
+
+    .input-answers {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .correct-variant button{
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        
+    }
+
+    /* .input-answers input {
+        border-radius: 3px;
+    } */
 </style>
 
 </html>
