@@ -10,8 +10,6 @@ async function get_question_count(file){
     return questionCount
 }
 
-
-
 fetch(`test-data.json`)
     .then(response => response.json())
     .then(json => {
@@ -52,3 +50,8 @@ fetch(`test-data.json`)
     })
     })
     console.log(JSON.parse(localStorage.testsave))
+
+
+const div = document.querySelectorAll(".test_list_container")
+console.log(div.length)
+if (div.length>=1){document.getElementById("tests_none").style.display = "none"}    
