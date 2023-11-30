@@ -178,6 +178,7 @@
 
     .hiddenText {
         padding: 10px;
+        font-size: 1.35vw;
     }
 }
 
@@ -272,6 +273,7 @@
 
     .hiddenText {
         padding: 8px;
+        font-size: 2.4vw;
     }
 }
 
