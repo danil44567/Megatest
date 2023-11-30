@@ -147,7 +147,6 @@ function fillQuiz(arr) {
     let iterations = Math.min(curentPage * testsInPage, arr.length);
     for (let index = (curentPage - 1) * testsInPage; index < iterations; index++) {
         const element = arr[index];
-        console.log(element)
         const resultsContainer = document.createElement("a");
         resultsContainer.classList.add("quizPannel");
         resultsContainer.href = `testWindow.html?testid=${index}&file=${element.file}`
@@ -161,19 +160,4 @@ function fillQuiz(arr) {
 
         quizContainer.appendChild(resultsContainer);
     }
-
-    // arr.forEach((element, index) => {
-    //     const resultsContainer = document.createElement("a");
-    //     resultsContainer.classList.add("quizPannel");
-    //     resultsContainer.href = `testWindow.html?testid=${index}&file=${element.file}`
-    //     let icon = iconsFloder + (element.icon == "" ? "EmptyIcon.png" : element.icon);
-    //     resultsContainer.innerHTML =
-    //         `
-    //     <img src="${icon}">
-    //     <span class="hiddenText">${element.discription}</span>
-    //     <h2 class="title">${element.title}</h2>
-    //     `;
-
-    //     quizContainer.appendChild(resultsContainer);
-    // });
 }
