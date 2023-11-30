@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="historystyle.css">
+    <link rel="stylesheet" href="history-breakpoints.css">
     <link rel="stylesheet" href="header-and-footer.css">
-    <title>МЕГАТЕСТ</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <title>Интеллитест - История решений</title>
 </head>
 
 <body>
+
     <header>
         <a href="index.html" class="left">
             <img src="img/ИнтеллитестИконка.png" alt="">
@@ -40,42 +43,28 @@
 
         </label>
     </header>
-
+<main>
     <div class="test_list_container">
-        <div class="test_list_element">
-            <img src="img/icons/EmptyIcon.png">
-            <div class="test_name">Sample test name</div>
+        <!-- <div class="test_list_element">
+            <img src="img/icons/EmptyIcon.png" alt="test icon">
+            <div class="test_name">S</div>
             <div class="test_score">61/84</div>
-        </div>
-        <div class="test_list_element">
-            <img src="img/icons/EmptyIcon.png">
-            <div class="test_name">Sample test name</div>
-            <div class="test_score">61/84</div>
-        </div>
-        <div class="test_list_element">
-            <img src="img/icons/EmptyIcon.png">
-            <div class="test_name">Sample test name</div>
-            <div class="test_score">61/84</div>
-        </div>
-        <div class="test_list_element">
-            <img src="img/icons/EmptyIcon.png">
-            <div class="test_name">Sample test name</div>
-            <div class="test_score">61/84</div>
-        </div>
-        <div class="test_list_element">
-            <img src="img/icons/EmptyIcon.png">
-            <div class="test_name">Sample test name</div>
-            <div class="test_score">61/84</div>
-        </div>
+        </div> -->
+        <div class="no_tests" id="tests_none"> Ты не прошёл ни одного теста, пока что...</div>
     </div>
-    <div class="pagination_list">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
+
+    <div class="pagination">
+        <button id="pagination-left"></button>
+        <div class="pagination_list">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+        </div>
+        <button id="pagination-right"></button>
     </div>
-    
+</main>
     <footer>
         <div class="footer__links">
             <a class="navLink" href="#">Инструкция</a>
@@ -83,6 +72,7 @@
         </div>
         <a href="mailto:naplevat@samsa.ur" class="email">Email: naplevat@samsa.ur</a>
     </footer>
+<script src="history-script.js"></script>
 </body>
 
 </html>
