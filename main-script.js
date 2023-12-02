@@ -155,7 +155,7 @@ function fillQuiz(arr) {
         let icon = iconsFloder + (element.icon == "" ? "EmptyIcon.png" : element.icon);
         resultsContainer.innerHTML =
             `
-        <img src="${icon}">
+        <img src="${icon}" alt="Изображение ${element.title}">
         <span class="hiddenText">${element.discription}</span>
         <h2 class="title">${element.title}</h2>
         `;
