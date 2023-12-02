@@ -1,6 +1,7 @@
 
 let tests;
 let activeTests;
+let bestTestsId = [0, 14, 1, 10, 2];
 
 const iconsFloder = "img/icons/";
 const tagAll = document.getElementById("tag-all");
@@ -33,8 +34,9 @@ fetch("test-data.json")
         defaultPage();
         let bestTestLine = document.getElementById("best-testes-line");
         bestTestLine.innerHTML = "";
+
         for (let i = 0; i < elementsCount; i++) {
-            let curentTest = tests[i];
+            let curentTest = tests[bestTestsId[i]];
             const bestTest = document.createElement("div");
             bestTest.classList.add("best-testes__quiz-pannel");
             let icon = iconsFloder + (curentTest.icon == "" ? "EmptyIcon.png" : curentTest.icon);
