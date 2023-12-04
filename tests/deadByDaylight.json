@@ -1,0 +1,106 @@
+{
+    "title":"Тест по Dead by Daylight",
+    "image":"dbd_animated_keyart_poster.jpg",
+    "questions":[
+        {
+            "question":"Какой из перечисленных ниже перков не пренадлежит Renato Lyra?",
+            "options":[
+                "Blood Rush",
+                "Better Together",
+                "Teamwork: Collective Stealth",
+                "Background Player"
+            ],
+            "correctIndex":1
+        },
+            {"question":"Какого персонажа из известной хоррор-франшизы добавили в игру последним?",
+            "options":[
+                "Alien",
+                "Cenobite",
+                "Freddy Krueger",
+                "Chucky"
+            ],
+            "correctIndex":3
+        },
+        {
+            "question":"Как называется способность персонажа Ghost Face?",
+            "options":[
+                "Reign of Darkness",
+                "Feral Frenzy",
+                "Night Shroud",
+                "Evil Within"
+            ],
+            "correctIndex":2
+        },
+        {
+            "question":"Сколько в игре Hex перков на данный момент?",
+            "options":[
+                "12",
+                "15",
+                "17",
+                "19"
+            ],
+            "correctIndex":1
+        },
+        {
+            "question":"Какова дефолтная скорость бега выживших?",
+            "options":[
+                "3.8m/s",
+                "4.4m/s",
+                "4.6m/s",
+                "4.0m/s"
+            ],
+            "correctIndex":3
+        },
+        {
+            "question":"Кто из перечисленных ниже персонажей стал первым обладателем Boon перков?",
+            "options":[
+                "Jonah Vasquez",
+                "Danny Johnson",
+                "Mikaela Reid",
+                "Yoichi Asakawa"
+            ],
+            "correctIndex":2
+        },
+        {
+            "question":"Какой из представленных ниже не обладает Hex перками?",
+            "options":[
+                "Onryō",
+                "Deathslinger",
+                "Trickster",
+                "Blight"
+            ],
+            "correctIndex":0
+        },
+        {
+            "question":"Какой из цветов индицирует предметы/подношения наивысшей редкости?",
+            "options":[
+                "Желтый",
+                "Фиолетовый",
+                "Красный",
+                "Синий"
+            ],
+            "correctIndex":2
+        },
+
+        {
+            "question":"Есть ли в игре Николас Кейдж",
+            "options":[
+                "нет (поменьшеб)",
+                "да",
+                "нет",
+                "нет (большое)"
+        ],
+            "correctIndex":1
+        },
+        {
+            "question":"Как звали последнего non-licensed выжившего добавленного в игру на данный момент?",
+            "options":[
+                "Gabriel Soma",
+                "Haddie Kaur",
+                "Jonah Vasquez",
+                "Vittorio Toscano"
+            ],
+            "correctIndex":0
+        }
+    ]
+}
