@@ -97,6 +97,13 @@
             "type": "movie",
             "discription": "Пройдите захватывающий тест по приключениям викинга Иккинга и его дракона Беззубика в борьбе с драконами. Ответьте на вопросы и проверьте свои знания!",
             "file": "HowToTrainYourDragon3"
+        },
+        {
+            "title": "Тест по Dead By Daylight",
+            "icon": "dbd.jpg",
+            "type": "game",
+            "discription": "*вставьте ваше захватывающее описание*",
+            "file": "deadByDaylight"
         }
     ]
 }
