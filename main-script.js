@@ -85,8 +85,8 @@ const quizContainer = document.getElementById("quizContainer");
 function fillQuiz(arr) {
     quizContainer.innerHTML = "";
 
-    let iterations = Math.min(curentPage * testsInPage, arr.length);
-    for (let index = (curentPage - 1) * testsInPage; index < iterations; index++) {
+    let iterations = Math.min(curentPage * elementsInPage, arr.length);
+    for (let index = (curentPage - 1) * elementsInPage; index < iterations; index++) {
         const element = arr[index];
         const resultsContainer = document.createElement("a");
         resultsContainer.classList.add("quizPannel");
