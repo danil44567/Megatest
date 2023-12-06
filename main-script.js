@@ -75,70 +75,9 @@ function switchTagBtn(newTagBtn) {
     activeTagBtn = newTagBtn;
 }
 
-
-const paginationButtonsParent = document.getElementById("pagination__buttons");
-const pagination = document.getElementById("pagination");
-let curentPage = 1;
-let maxPage = 1;
-const testsInPage = 12;
-let paginationButtons = [];
-let defaultPage = null;
-
-let paginationLeft = document.getElementById("pagination__left");
-let paginationRight = document.getElementById("pagination__right");
-
-paginationLeft.addEventListener("click", movePage(-1))
-paginationRight.addEventListener("click", movePage(1))
-
-function calculatePages(testsCount) {
-    const testPages = Math.ceil(testsCount / testsInPage);
-    if (testPages == 1) {
-        pagination.style.display = "none";
-    }
-    else {
-        pagination.style.display = "flex";
-    }
-
-    paginationButtons = [];
-    paginationButtonsParent.innerHTML = "";
-    maxPage = testPages;
-    for (let index = 0; index < testPages; index++) {
-        const element = document.createElement("button");
-        element.classList.add('pagination__button');
-        element.addEventListener('click', changeButtonPage(index + 1));
-        element.textContent = index + 1;
-        paginationButtons.push(element);
-        paginationButtonsParent.appendChild(element);
-    }
-    curentPage = 1;
-    paginationButtons[0].classList.add("selected");
-}
-
-function movePage(direction) {
-    let dir = direction;
-    return function () {
-        let tempPage = curentPage + dir;
-        if (tempPage < 1 || tempPage > maxPage)
-            return;
-
-        setPage(curentPage + dir);
-    }
-}
-
 function setPage(pageNumber)
 {
-    paginationButtons[curentPage - 1].classList.remove("selected");
-    curentPage = pageNumber;
-    paginationButtons[pageNumber - 1].classList.add("selected");
     fillQuiz(activeTests);
-}
-
-function changeButtonPage(pageNumber) {
-    const page = pageNumber;
-    return function () {
-        setPage(page);
-        // quizContainer.scrollIntoView();
-    }
 }
 
 const quizContainer = document.getElementById("quizContainer");
@@ -146,8 +85,8 @@ const quizContainer = document.getElementById("quizContainer");
 function fillQuiz(arr) {
     quizContainer.innerHTML = "";
 
-    let iterations = Math.min(curentPage * testsInPage, arr.length);
-    for (let index = (curentPage - 1) * testsInPage; index < iterations; index++) {
+    let iterations = Math.min(curentPage * elementsInPage, arr.length);
+    for (let index = (curentPage - 1) * elementsInPage; index < iterations; index++) {
         const element = arr[index];
         const resultsContainer = document.createElement("a");
         resultsContainer.classList.add("quizPannel");
@@ -163,3 +102,10 @@ function fillQuiz(arr) {
         quizContainer.appendChild(resultsContainer);
     }
 }
+
+window.addEventListener("scroll", (event) => {
+    let a = this.scrollY;
+    let b = document.body.scrollHeight - document.body.clientHeight;
+    let c = a / b;
+    document.body.style.setProperty('--thumb-color-percent', (c * 100) + '%')
+});

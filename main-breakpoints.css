@@ -46,22 +46,6 @@
         padding-right: 45px;
     }
 
-    .pagination {
-        height: 59.2px;
-        width: auto;
-        gap: 16px;
-    }
-
-    #pagination__buttons{
-        gap: 16px;
-    }
-
-    .pagination__button {
-        width: 59.2px;
-        height: 59.2px;
-        border-radius: 6.4px;
-    }
-
     .quiz-content {
         padding: 0 140px;
     }
@@ -81,10 +65,7 @@
         height: 50px;
     }
 
-    .pagination__button {
-        width: 55px;
-        height: 55px;
-    }
+
 
     .filter {
         height: 70px;
@@ -124,14 +105,6 @@
         padding: 0 30px;
     }
 
-    .pagination__button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .pagination__button {
-        border-radius: 5px;
-    }
 
     .filter {
         height: 70px;
@@ -278,21 +251,6 @@
 }
 
 @media screen and (max-width: 450px) {
-
-    .pagination {
-        gap: 10px;
-    }
-
-    #pagination__buttons{
-        gap: 10px;
-    }
-
-    .pagination__button {
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-        font-size: 1.5em;
-    }
     
     .arrow-left {
         left: 17px;
