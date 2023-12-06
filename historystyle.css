@@ -18,6 +18,7 @@ main{
     /* height: 100%; */
     flex-direction: column;
     flex-grow: 1;
+    align-items: center;
 }
 
 header,footer{
