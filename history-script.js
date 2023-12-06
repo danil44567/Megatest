@@ -11,11 +11,32 @@ const scoreContainer = document.querySelector(".test_list_container")
         })
     return [questionCount, id]
 }
-function setPage(pageNumber){
-    makeHistory(testsave)
+// function setPage(pageNumber){
+//     makeHistory(promises,allTests,testsComplite)
+// }
+
+function makeHistory(promises,allTests,testsComplite){
+    let qustion_arr = Promise.all(promises).then(a => {
+        // for (let index = 0; index < a.length; index++)
+        console.log(a.length)
+        let iterations = Math.min(curentPage * elementsInPage, a.length);
+        console.log(`iter - ${iterations}`)
+        for (let index = (curentPage - 1) * elementsInPage; index < iterations; index++) {
+            let currentTest = allTests[a[index][1]]
+            const resultsContainer = document.createElement("div")
+            resultsContainer.classList.add("test_list_element")
+            let icon = iconsFloder + (currentTest.icon == "" ? "EmptyIcon.png" : currentTest.icon)
+            resultsContainer.innerHTML =
+                `
+        <img src="${icon}" alt="test icon">
+        <div class="test_name">${currentTest.title}</div>
+        <div class="test_score">${testsComplite[index].result}/${a[index][0]}</div>
+    `
+            scoreContainer.appendChild(resultsContainer)
+        }
+    })
 }
 
-// function makeHistory(testsave){
     if (localStorage.testsave != null) {
         document.getElementById("tests_none").style.display = "none"
         fetch(`test-data.json`)
@@ -30,25 +51,11 @@ function setPage(pageNumber){
                     promises.push(get_question_count(currentTest.file, element.testid))
                 })
                 //
-                let testsComplite = usersTests.tests.length
-                calculatePages(testsComplite)
-                console.log(testsComplite)
+                let testsComplite = usersTests.tests
+                calculatePages(testsComplite.length)
+                console.log(`tests - ${testsComplite.length}`)
                 //
-                let qustion_arr = Promise.all(promises).then(a => {
-                    for (let index = 0; index < a.length; index++) {
-                        let currentTest = allTests[a[index][1]]
-                        const resultsContainer = document.createElement("div")
-                        resultsContainer.classList.add("test_list_element")
-                        let icon = iconsFloder + (currentTest.icon == "" ? "EmptyIcon.png" : currentTest.icon)
-                        resultsContainer.innerHTML =
-                            `
-                    <img src="${icon}" alt="test icon">
-                    <div class="test_name">${currentTest.title}</div>
-                    <div class="test_score">${usersTests.tests[index].result}/${a[index][0]}</div>
-                `
-                        scoreContainer.appendChild(resultsContainer)
-                    }
-                })
+                makeHistory(promises,allTests,testsComplite)
             })
     }  
 
