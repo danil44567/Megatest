@@ -1,5 +1,6 @@
 @media screen and (max-width: 1536px) { 
     /* 0.8 */
+    .main{margin-bottom: 80px;}
     .test_list_container{
         font-size: 48px;
         margin: 32.8px 139.2px 80px;
@@ -7,10 +8,13 @@
     .test_list_container img{max-width: 137.6px;}
     .test_name{padding:10.9px 55.2px;}
     .test_score{padding:10.9px 55.2px;}
+
+    .pagination{font-size: 19.2px;}
 }
 
 @media screen and (max-width: 1250px) {
     /* 0.6 */
+    .main{margin-bottom: 60px;}
     .test_list_container{
         font-size: 36px;
         margin: 24.6px 104.4px 60px;
@@ -18,10 +22,13 @@
     .test_list_container img{max-width: 103.2px;}
     .test_name{padding:8.175px 41.4px;}
     .test_score{padding:8.175px 41.4px;}
+
+    .pagination{font-size: 14px;}
 }
 
 @media screen and (max-width: 900px) {
     /* 0.5 */
+    .main{margin-bottom: 50px;}
     .test_list_container{
         font-size: 30px;
         margin: 20.5px 20px 50px;/* margin: 20.5px 87px 50px; */
@@ -32,7 +39,9 @@
     }
 
 @media screen and (max-width: 650px) {
+
     /* 0.4 */
+    .main{margin-bottom: 40px;}
     .test_list_container{
         font-size: 24px;
         margin: 16.4px 10px 40px;/* margin: 16.4px 69.6px 40px; */
@@ -54,4 +63,6 @@
     .test_name{padding:8px 5.5px;
         margin-right: 5px;}
     .test_score{padding:8px 5px;}
+
+    .pagination{font-size: 10.5px;}
 }
