@@ -1,7 +1,8 @@
 const iconsFloder = "img/icons/"
 const scoreContainer = document.querySelector(".test_list_container")
-
-
+let promises 
+let allTests
+let testsComplite
 
   async function get_question_count(file, id) {
     let questionCount = await fetch(`tests/${file}.json`)
@@ -11,19 +12,18 @@ const scoreContainer = document.querySelector(".test_list_container")
         })
     return [questionCount, id]
 }
-// function setPage(pageNumber){
-//     makeHistory(promises,allTests,testsComplite)
-// }
+const historyContainer = document.getElementById("history_container")
 
 function makeHistory(promises,allTests,testsComplite){
+historyContainer.innerHTML=""
     let qustion_arr = Promise.all(promises).then(a => {
-        // for (let index = 0; index < a.length; index++)
         console.log(a.length)
         let iterations = Math.min(curentPage * elementsInPage, a.length);
         console.log(`iter - ${iterations}`)
         for (let index = (curentPage - 1) * elementsInPage; index < iterations; index++) {
             let currentTest = allTests[a[index][1]]
             const resultsContainer = document.createElement("div")
+            // resultsContainer.href = `testWindow.html?testid=${index}&file=${currentTest.file}` ссылка (не работает)
             resultsContainer.classList.add("test_list_element")
             let icon = iconsFloder + (currentTest.icon == "" ? "EmptyIcon.png" : currentTest.icon)
             resultsContainer.innerHTML =
@@ -42,16 +42,16 @@ function makeHistory(promises,allTests,testsComplite){
         fetch(`test-data.json`)
             .then(response => response.json())
             .then(json => {
-                let allTests = json.tests
+                allTests = json.tests
                 let usersTests = JSON.parse(localStorage.testsave)
-                let promises = []
+                promises = []
 
                 usersTests.tests.forEach(element => {
                     let currentTest = allTests[element.testid]
                     promises.push(get_question_count(currentTest.file, element.testid))
                 })
                 //
-                let testsComplite = usersTests.tests
+                testsComplite = usersTests.tests
                 calculatePages(testsComplite.length)
                 console.log(`tests - ${testsComplite.length}`)
                 //
@@ -59,7 +59,9 @@ function makeHistory(promises,allTests,testsComplite){
             })
     }  
 
-
+function setPage(pageNumber){
+    makeHistory(promises,allTests,testsComplite)
+}
 
 
 
