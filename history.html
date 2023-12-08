@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="historystyle.css">
     <link rel="stylesheet" href="history-breakpoints.css">
     <link rel="stylesheet" href="header-and-footer.css">
+    <link rel="stylesheet" href="pagination.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <title>Интеллитест - История решений</title>
 </head>
@@ -44,7 +45,7 @@
         </label>
     </header>
 <main>
-    <div class="test_list_container">
+    <div class="test_list_container" id="history_container">
         <!-- <div class="test_list_element">
             <img src="img/icons/EmptyIcon.png" alt="test icon">
             <div class="test_name">S</div>
@@ -53,16 +54,17 @@
         <div class="no_tests" id="tests_none"> Ты не прошёл ни одного теста, пока что...</div>
     </div>
 
-    <div class="pagination">
-        <button id="pagination-left"></button>
-        <div class="pagination_list">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
+    <div id="pagination" class="pagination">
+        <button id="pagination__left" class="pagination__button">
+            <img src="img/LeftArrow.svg" alt="Влево">
+        </button>
+        <div id="pagination__buttons">
+            <!-- <button class="pagination__button">1</button> -->
         </div>
-        <button id="pagination-right"></button>
+
+        <button id="pagination__right" class="pagination__button">
+            <img src="img/RightArrow.svg" alt="Вправо">
+        </button>
     </div>
 </main>
     <footer>
@@ -73,6 +75,7 @@
         <a href="mailto:naplevat@samsa.ur" class="email">Email: naplevat@samsa.ur</a>
     </footer>
 <script src="history-script.js"></script>
+<script src="pagination.js"></script>
 </body>
 
 </html>
