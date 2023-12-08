@@ -132,14 +132,6 @@ main {
     width: 100%;
 }
 
-
-
-
-.selected {
-    background: #3282B8;
-    box-shadow: none;
-}
-
 .filter {
     width: 100%;
     height: 116px;

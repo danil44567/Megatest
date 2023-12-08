@@ -41,6 +41,11 @@
     gap: 20px;
 }
 
+.selected {
+    background: #3282B8;
+    box-shadow: none;
+}
+
 @media screen and (max-width: 1536px) {
 
     .pagination {
