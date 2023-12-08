@@ -4,6 +4,8 @@ let promises
 let allTests
 let testsComplite
 
+pagination.style.display = "none" //скрыть пагинацию при загрузке страницы
+
   async function get_question_count(file, id) {
     let questionCount = await fetch(`tests/${file}.json`)
         .then(response => response.json())
@@ -57,7 +59,7 @@ historyContainer.innerHTML=""
                 //
                 makeHistory(promises,allTests,testsComplite)
             })
-    }  
+    }
 
 function setPage(pageNumber){
     makeHistory(promises,allTests,testsComplite)
