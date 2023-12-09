@@ -3,7 +3,7 @@ const scoreContainer = document.querySelector(".test_list_container")
 let promises 
 let allTests
 let testsComplite
-
+pagination.style.display = "none"
 
   async function get_question_count(file, id) {
     let questionCount = await fetch(`tests/${file}.json`)
