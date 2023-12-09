@@ -4,7 +4,6 @@ let promises
 let allTests
 let testsComplite
 
-pagination.style.display = "none" //скрыть пагинацию при загрузке страницы
 
   async function get_question_count(file, id) {
     let questionCount = await fetch(`tests/${file}.json`)
