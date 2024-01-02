@@ -4,19 +4,25 @@
 }
 body{
     font-family: Inter;
-    font-size: 36px;
+    font-size: 28px;
 }
 main{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap : 20px;
 }
 .main_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+    padding: 20px;
     margin: 20px 0px;
     background-color: #D9D9D9;
-    height: 1000px;
-    width : 1920px; 
+    width : 90%; 
 }
 button{
     flex-shrink: 0;
@@ -25,7 +31,11 @@ button{
     background: none;
     border: none;
 }
-button img {
+.button__img{
     width: 100%;
     height: 100%;
+}
+#text{width: 84%;}
+#pseudo_buttons{
+    width: 140px;
 }
