@@ -1,21 +1,21 @@
 function toggleAll(counter)
 {
-    if (counter = 1)
+    if (counter == 1)
     {
         document.getElementById("screen").innerHTML ='<img src="img/instructions/Rectangle 29.png" alt="скрин">'
         document.getElementById("text").textContent ='silly cat1'
     }
-    else if (counter = 2)
+    else if (counter == 2)
     {
         document.getElementById("screen").innerHTML ='<img src="img/instructions/Rectangle 29.png" alt="скрин">'
         document.getElementById("text").textContent ='silly cat2'
     }
-    else if (counter = 3)
+    else if (counter == 3)
     {
         document.getElementById("screen").innerHTML ='<img src="img/instructions/Rectangle 29.png" alt="скрин">'
         document.getElementById("text").textContent ='silly cat3'
     }
-    else if (counter = 4)
+    else if (counter == 4)
     {
         document.getElementById("screen").innerHTML ='<img src="img/instructions/Rectangle 29.png" alt="скрин">'
         document.getElementById("text").textContent ='silly cat4'
