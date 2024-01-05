@@ -4,7 +4,7 @@
 }
 body{
     font-family: Inter;
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
 }
 main{
@@ -38,6 +38,4 @@ button{
 }
 
 #text{width: 84%;}
-#pseudo_buttons{
-    width: 140px;
-}
+#page_number{font-size: 40px;}
