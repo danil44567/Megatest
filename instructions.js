@@ -8,7 +8,7 @@ function toggleAll(counter)
     else if (counter == 2)
     {
         document.getElementById("screen").innerHTML ='<img src="img/instructions/Rectangle 29.png" alt="скрин">'
-        document.getElementById("text").textContent ='silly cat2'
+        document.getElementById("text").textContent ='После выбора теста вы перейдёте к его прохождению: читайте вопрос нажимайте на кнопку с ответом который считаете правильным и после пары секунд ожидания вы перейдёте следующему вопросу. После нажатия ответ загориться зелёным если он был правильный и красным если неправильный. В тесте нельзя вернуться к предыдущим вопросам и выбрать другой вариант, так что учитывайте это во время прохождения.'
     }
     else if (counter == 3)
     {
