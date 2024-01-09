@@ -39,3 +39,8 @@ button{
 
 #text{width: 84%;}
 #page_number{font-size: 40px;}
+
+#screen img{
+    width: 80%;
+    height: 80%;
+}

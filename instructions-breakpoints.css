@@ -2,10 +2,6 @@
     /* 0.8 */
     body{font-size: 25.6px;}
     #page_number{font-size: 32px;}
-    #screen img{
-        width: 80%;
-        height: 80%;
-    }
     button{
         width: 64px;
         height: 128px;
@@ -20,10 +16,6 @@
     .main_block{
         gap : 20px;
         padding: 20px 10px;
-    }
-    #screen img{
-        width: 80%;
-        height: 80%;
     }
     button{
         width: 48px;
@@ -40,10 +32,6 @@
         gap : 20px;
         padding: 20px 10px;
     }
-    #screen img{
-        width: 80%;
-        height: 80%;
-    }
     button{
         width: 40px;
         height: 80px;
@@ -59,10 +47,6 @@
         gap : 10px;
         padding: 20px 0px;
     }
-    #screen img{
-        width: 80%;
-        height: 80%;
-    }
     button{
         width: 32px;
         height: 64px;
@@ -74,10 +58,6 @@
     .main_block{
         gap : 10px;
         padding: 20px 0px;
-    }
-    #screen img{
-        width: 80%;
-        height: 80%;
     }
     button{
         width: 32px;
