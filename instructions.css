@@ -5,6 +5,7 @@
 body{
     font-family: Inter;
     font-size: 32px;
+    margin: 0;
 }
 main{
     display: flex;
